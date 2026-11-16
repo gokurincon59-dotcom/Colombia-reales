@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090506"><meta name="robots" content="noindex,nofollow">
+<title>COLOMBIA REALS | Generador de códigos</title><link rel="icon" href="assets/logo-cr.webp"><link rel="apple-touch-icon" href="assets/logo-cr.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="assets/navidad.css">
+<style>
+:root{--red:#ff1825;--red2:#a9000b;--bg:#090506;--muted:#b9aeb0}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 110%,#5a1018 0,#1a080c 45%,#050304 85%) fixed;color:#fff;font-family:Poppins,"Segoe UI",Arial,sans-serif;padding:24px 4vw 60px}
+.wrap{max-width:1040px;margin:0 auto}
+header{display:flex;align-items:center;gap:14px;padding-bottom:16px;border-bottom:3px solid;border-image:linear-gradient(90deg,#FCD116 50%,#003893 50% 75%,#CE1126 75%) 1;margin-bottom:22px;margin-top:14px}
+header img{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 0 12px #ff1727)}
+h1{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:4px;font-size:clamp(28px,5vw,42px);margin:0;line-height:1}h1 b{color:var(--red);font-weight:400}
+header small{display:block;color:#ff6870;letter-spacing:4px;font-size:10px;margin-top:6px}
+header a{margin-left:auto;color:#ff6870;font-size:12px;text-decoration:none}
+.card{background:rgba(20,8,10,.9);border:1px solid #5a1a22;border-radius:14px;padding:22px;margin-bottom:22px;box-shadow:0 0 40px rgba(255,20,35,.12)}
+.card h2{margin:0 0 16px;font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:3px;font-size:24px}
+.card h2 small{font:400 12px Poppins,sans-serif;letter-spacing:0;color:var(--muted);margin-left:8px}
+.f{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+label{display:block;font-size:11px;letter-spacing:1px;color:var(--muted);text-transform:uppercase}
+input,select{width:100%;margin-top:6px;background:#12080a;color:#fff;border:1px solid #4b171f;border-radius:6px;padding:11px 12px;font:inherit;font-size:14px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--red);box-shadow:0 0 10px #a9000b}
+.wide{grid-column:1/-1}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+button{border:0;border-radius:6px;padding:12px 20px;font:600 12px Poppins,sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:#fff;cursor:pointer;transition:.2s}
+button:disabled{opacity:.6;cursor:wait}
+.p{background:linear-gradient(135deg,#ff1825,#a9000b);box-shadow:0 0 22px rgba(255,24,37,.4)}.p:hover{transform:translateY(-2px)}
+.gr{background:linear-gradient(135deg,#0b8a3c,#06562a);box-shadow:0 0 22px rgba(20,200,90,.35)}.gr:hover{transform:translateY(-2px)}
+.g{background:#16090c;border:1px solid #4b171f}.g:hover{background:var(--red2)}
+.stats{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:14px;font-size:12px;color:var(--muted)}.stats b{display:block;font-size:26px;color:#ff4550;font-family:"Bebas Neue",Impact,sans-serif;letter-spacing:2px;font-weight:400}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:10px 12px;border-bottom:1px solid #3a141b;text-align:left;white-space:nowrap}th{font-size:10px;letter-spacing:2px;color:#ff7780;text-transform:uppercase}
+td.c,.c{font-family:Consolas,Menlo,monospace;font-size:15px;letter-spacing:1px;color:#ffd36b}
+tr.used td{opacity:.45;text-decoration:line-through}tr.used td.w{text-decoration:none;opacity:1}
+td button{padding:6px 10px;font-size:10px}
+.empty{padding:26px;text-align:center;color:var(--muted);border:1px dashed #5a1a22;border-radius:10px}
+.note{font-size:12px;color:#cbbec0;line-height:1.6;border-left:3px solid var(--red);padding:12px 16px;background:rgba(18,7,9,.8);border-radius:0 8px 8px 0;margin-bottom:14px}
+.hint{font-size:11.5px;color:#9d9194;line-height:1.5;margin-top:6px;text-transform:none;letter-spacing:0}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,100px);background:#a9000b;border:1px solid #ff4550;padding:12px 20px;border-radius:30px;transition:.4s;font-size:13px;z-index:90;max-width:92vw}#toast.show{transform:translate(-50%,0)}
+textarea{width:100%;margin-top:6px;background:#12080a;color:#fff;border:1px solid #4b171f;border-radius:6px;padding:11px 12px;font:inherit;font-size:13px;outline:none;resize:vertical;min-height:84px}
+.me{display:flex;align-items:center;gap:10px;margin-left:auto;font-size:12px;color:var(--muted)}.me a,.me button{color:#ff6870;font-size:12px;text-decoration:none;background:none;border:1px solid #4b171f;border-radius:20px;padding:6px 12px;letter-spacing:0;text-transform:none}
+.av{width:26px;height:26px;border-radius:50%;vertical-align:middle;margin-right:8px;background:#2a1216}
+.err{display:none;background:rgba(255,24,37,.12);border:1px solid #ff4550;border-radius:10px;padding:12px 14px;margin-bottom:20px;font-size:13px;color:#ffb3b8;line-height:1.5}
+.tag{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;background:#2a1216;border:1px solid #4b171f}.tag.d{color:#8ff0b0;border-color:#1f6b3a}.tag.z{color:#ffd36b;border-color:#6b5a1f}
+.ok{color:#8ff0b0}.pend{color:#ffd36b}td.id,.id{font-family:Consolas,Menlo,monospace;font-size:12px;color:#b9aeb0}
+.hid{display:none!important}
+#lg{max-width:440px;margin:8vh auto 0;text-align:center}#lg p{color:#d5cacc;font-size:14px;line-height:1.6}
+#lg label{text-align:left;margin-bottom:14px}#lg .dc{width:100%;margin-top:6px;padding:14px;border-radius:12px;font-size:14px;letter-spacing:1px;background:linear-gradient(135deg,#ff1825,#a9000b);box-shadow:0 6px 24px rgba(255,24,37,.4)}#lg .adm{margin-top:16px;font-size:11.5px;color:#8e8589;line-height:1.6}
+/* pestañas */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
+.tab{background:#16090c;border:1px solid #4b171f;padding:11px 16px;border-radius:30px;font-size:11px}.tab:hover{border-color:#1f6b3a}
+.tab.on{background:linear-gradient(135deg,#0b8a3c,#06562a);border-color:#1f6b3a;box-shadow:0 0 18px rgba(20,200,90,.35)}
+/* resumen */
+.kps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:22px}
+.kp{background:rgba(18,7,9,.88);border:1px solid #3a141b;border-radius:12px;padding:14px 16px}.kp b{display:block;font:400 36px "Bebas Neue",Impact,sans-serif;letter-spacing:2px;color:#ff4550;line-height:1.1}.kp span{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}.kp small{display:block;color:#8e8589;font-size:11px;margin-top:3px}
+.kp.go{cursor:pointer}.kp.go:hover{border-color:#ffd36b}.kp.warn b{color:#ffd36b}.kp.good b{color:#8ff0b0}
+/* estados */
+.st{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;border:1px solid;white-space:nowrap}.st.on{color:#8ff0b0;border-color:#1f6b3a;background:rgba(20,200,90,.08)}.st.off{color:#b9aeb0;border-color:#4b4b4b}.st.full,.st.end{color:#ff9aa1;border-color:#7a2630}.st.sch{color:#ffd36b;border-color:#6b5a1f}
+/* códigos para todos */
+.pcs{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
+.pc{background:rgba(18,7,9,.88);border:1px solid #3a141b;border-radius:12px;padding:16px}.pc.off{opacity:.65}
+.pc .ph{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.pc small{display:block;color:#a99da0;font-size:11.5px;line-height:1.6;margin-top:6px}
+.pc .row{margin-top:12px;gap:6px}.pc .row button{padding:7px 10px;font-size:10px}
+.bar{height:8px;border-radius:6px;background:#2a1216;overflow:hidden;margin:12px 0 4px}.bar i{display:block;height:100%;background:linear-gradient(90deg,#0b8a3c,#8ff0b0);border-radius:6px;min-width:2px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.chips button{padding:6px 10px;font-size:10px;border-radius:20px}
+.tpl{display:flex;gap:8px;align-items:flex-end}.tpl select{flex:1}.tpl button{padding:11px 12px;font-size:11px;white-space:nowrap}
+/* ventana de confirmación */
+#cm{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.82)}#cm.on{display:flex}
+.mb{width:min(540px,100%);max-height:90vh;overflow:auto;background:#140709;border:1px solid #1f6b3a;border-radius:16px;padding:24px;box-shadow:0 0 50px rgba(20,200,90,.2),0 0 80px rgba(255,24,37,.18)}
+.mb h3{margin:0 0 12px;font:400 26px "Bebas Neue",Impact,sans-serif;letter-spacing:3px}.mb ul{margin:0 0 6px;padding:0;list-style:none}.mb li{padding:8px 0;border-bottom:1px solid #2a1216;font-size:13px;display:flex;justify-content:space-between;gap:14px;color:#d5cacc}.mb li b{color:#fff;text-align:right}
+.mb .big{font-family:Consolas,Menlo,monospace;font-size:20px;letter-spacing:2px;color:#ffd36b;text-align:center;padding:14px;background:#0e0608;border-radius:10px;margin:6px 0 12px;word-break:break-all}
+.mb .row{margin-top:16px}.mb .row button{flex:1}
+@media(max-width:650px){header .me span{display:none}.tab{padding:9px 12px}}
+body.emb header{display:none}body.emb{padding-top:0}</style></head><body>
+<div id="navi-lights" aria-hidden="true"></div>
+<div id="navi-orn" aria-hidden="true">
+<div class="orn" style="--x:3%;--l:70px;--s:34px;--c1:#ff6a73;--c2:#b0101c;--g:rgba(255,40,60,.55);--t:4.6s;--d:-1s"><i></i></div>
+<div class="orn" style="--x:7.5%;--l:130px;--s:26px;--c1:#ffe27a;--c2:#b8860b;--g:rgba(255,210,70,.5);--t:5.4s;--d:-2.4s"><i></i></div>
+<div class="orn" style="--x:12%;--l:50px;--s:22px;--c1:#5fe08c;--c2:#0d6b34;--g:rgba(40,220,110,.45);--t:4.1s;--d:-.6s"><i></i></div>
+<div class="orn" style="--x:97%;--l:80px;--s:34px;--c1:#ffe27a;--c2:#b8860b;--g:rgba(255,210,70,.5);--t:4.9s;--d:-1.8s"><i></i></div>
+<div class="orn" style="--x:92%;--l:150px;--s:28px;--c1:#ff6a73;--c2:#b0101c;--g:rgba(255,40,60,.55);--t:5.6s;--d:-3s"><i></i></div>
+<div class="orn" style="--x:88%;--l:55px;--s:22px;--c1:#7dbcff;--c2:#164a8f;--g:rgba(70,150,255,.45);--t:4.3s;--d:-.2s"><i></i></div>
+</div>
+<div id="navi-bg" aria-hidden="true">
+<div class="bk" style="--x:6%;--y:55%;--s:340px;--c:rgba(255,40,60,.9);--t:15s"></div>
+<div class="bk" style="--x:70%;--y:12%;--s:380px;--c:rgba(255,205,70,.8);--t:18s"></div>
+<div class="bk" style="--x:45%;--y:62%;--s:300px;--c:rgba(40,210,110,.8);--t:13s"></div>
+<div class="bk" style="--x:82%;--y:60%;--s:320px;--c:rgba(255,40,60,.8);--t:16s"></div>
+<div class="bk" style="--x:22%;--y:8%;--s:280px;--c:rgba(80,160,255,.7);--t:20s"></div>
+<div class="stars"></div><div class="stars s2"></div><div class="forest"></div></div>
+
+<div class="wrap">
+<header><img src="assets/logo-cr.webp" alt="Logo CR"><div><h1>COLOMBIA <b>REALS</b></h1><small>GENERADOR DE CÓDIGOS</small></div><div class="me" id="me"><a href="#" id="cat">← Catálogo</a><button class="g" id="out" type="button">Salir</button></div></header>
+
+<div class="card hid" id="lg"><h2>Acceso de administradores</h2>
+<p>Ingresa tu usuario y contraseña. Solo las cuentas autorizadas pueden crear códigos y ver el registro.</p>
+<div class="err" id="lgE"></div>
+<form id="lgF" autocomplete="on">
+<label>Usuario<input id="lgU" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
+<label>Contraseña<input id="lgP" name="password" type="password" autocomplete="current-password" required></label>
+<button class="dc" id="lgGo" type="submit">Entrar</button>
+</form>
+<div class="adm">Acceso privado. No compartas tus datos de ingreso.</div></div>
+
+<div id="app" class="hid">
+<div class="err" id="err"></div>
+<nav class="tabs" id="tabs">
+<button type="button" class="tab on" data-t="res">📊 Resumen</button>
+<button type="button" class="tab" data-t="ind">🎁 Códigos individuales</button>
+<button type="button" class="tab" data-t="pub">🌎 Código para todos</button>
+<button type="button" class="tab" data-t="can">👥 Canjes</button>
+</nav>
+
+<!-- ============ RESUMEN ============ -->
+<section data-p="res">
+<div class="kps" id="kps"></div>
+<div class="card"><h2>Últimos canjes</h2><div class="tw" id="lastBox"></div></div>
+<div class="card"><h2>Códigos para todos abiertos</h2><div id="openPub"></div></div>
+</section>
+
+<!-- ============ INDIVIDUALES ============ -->
+<section data-p="ind" class="hid">
+<div class="card"><h2>Crear códigos <small>cada código lo canjea una persona (o los usos que definas)</small></h2>
+<div class="f">
+<label class="wide">Plantilla de premio
+<div class="tpl"><select id="tpl"></select><button class="g" id="tplSave" type="button">💾 Guardar actual</button><button class="g" id="tplDel" type="button">🗑</button></div>
+<span class="hint">Guarda tus premios más usados y elígelos con un clic.</span></label>
+<label>Tipo de recompensa<select id="kind"><option value="discount">Descuento (%)</option><option value="prize">Premio</option></select></label>
+<label id="lv">Descuento (1 – 100 %)<input id="value" type="number" min="1" max="100" value="20"></label>
+<label id="lp" class="hid">Premio<input id="prize" maxlength="80" placeholder="Ej: Skin exclusiva de Navidad"></label>
+<label>Prefijo<input id="pre" value="CR-NAV" maxlength="12"></label>
+<label>Cantidad (1 – 500)<input id="qty" type="number" min="1" max="500" value="10"></label>
+<label>Caracteres por código<select id="len"><option>8</option><option selected>12</option><option>16</option></select></label>
+<label>Usos totales por código<input id="max" type="number" min="1" max="9999" value="1"></label>
+<label>Vence el (opcional)<input id="exp" type="date"></label>
+<label>Lote / etiqueta<input id="lot" value="Navidad 2026" maxlength="40"></label>
+<label class="wide">Solo para estos usuarios (opcional): IDs de Discord, uno por línea
+<textarea id="users" placeholder="Si pones IDs se crea un código personal por cada usuario y solo esa cuenta de Discord puede canjearlo.&#10;Ej: 123456789012345678"></textarea></label>
+</div>
+<div class="row"><button class="p" id="gen" type="button">🎁 Revisar y generar</button></div></div>
+
+<div class="card"><h2>Códigos individuales</h2>
+<div class="stats"><div><b id="sT">0</b>Total</div><div><b id="sA">0</b>Disponibles</div><div><b id="sU">0</b>Agotados</div><div><b id="sO">0</b>Desactivados</div></div>
+<div class="row" style="margin:0 0 14px"><input id="qi" placeholder="Buscar código, lote o premio…" style="margin:0;flex:1;min-width:180px"><select id="fi" style="margin:0;width:auto"><option value="all">Todos</option><option value="on">Disponibles</option><option value="full">Agotados / vencidos</option><option value="off">Desactivados</option></select><button class="g" id="cpA" type="button">Copiar disponibles</button><button class="g" id="csvC" type="button">CSV</button><button class="g" id="rel" type="button">↻</button></div>
+<div class="tw" id="box"></div></div>
+</section>
+
+<!-- ============ CÓDIGO PARA TODOS ============ -->
+<section data-p="pub" class="hid">
+<div class="card"><h2>Código para todos <small>un solo código que canjea mucha gente</small></h2>
+<div class="note">Un mismo código lo pueden canjear <b>muchas personas</b>, cada cuenta de Discord <b>una sola vez</b>. Se cierra cuando se acaban los <b>cupos</b> o llega la <b>fecha de cierre</b> (lo que pase primero). Debes poner al menos uno de los dos límites. Las horas son de Colombia.</div>
+<div class="f">
+<label class="wide">Plantilla de premio
+<div class="tpl"><select id="ctpl"></select><button class="g" id="ctplSave" type="button">💾 Guardar actual</button><button class="g" id="ctplDel" type="button">🗑</button></div></label>
+<label>Código (opcional)<input id="ccode" maxlength="40" placeholder="Ej: NAVIDAD2026" autocapitalize="characters"><span class="hint">Déjalo vacío y se genera uno automático.</span></label>
+<label>Prefijo si es automático<input id="cpre" value="CR" maxlength="12"></label>
+<label>Tipo de recompensa<select id="ckind"><option value="discount">Descuento (%)</option><option value="prize">Premio</option></select></label>
+<label id="clv">Descuento (1 – 100 %)<input id="cvalue" type="number" min="1" max="100" value="20"></label>
+<label id="clp" class="hid">Premio<input id="cprize" maxlength="80" placeholder="Ej: Pistola navideña"></label>
+<label>Cupos (cantidad de personas)<input id="cmax" type="number" min="0" max="99999" value="50"><span class="hint">0 = sin tope de personas (entonces pon fecha de cierre).</span></label>
+<label>Abre el (opcional)<input id="cstart" type="datetime-local"></label>
+<label>Cierra el<input id="cend" type="datetime-local">
+<div class="chips" id="cchips"><button class="g" type="button" data-h="24">+24 h</button><button class="g" type="button" data-h="72">+3 días</button><button class="g" type="button" data-h="168">+7 días</button><button class="g" type="button" data-x="nav">24 dic 11:59 p. m.</button><button class="g" type="button" data-x="clr">Quitar</button></div></label>
+<label>Nombre / etiqueta<input id="clot" value="Evento Navidad" maxlength="40"></label>
+<label class="wide">Nota interna (opcional)<input id="cdesc" maxlength="120" placeholder="Solo la ves tú"></label>
+</div>
+<div class="row"><button class="gr" id="cgen" type="button">🌎 Revisar y crear código</button></div></div>
+
+<div class="card"><h2>Mis códigos para todos</h2>
+<div class="stats"><div><b id="pT">0</b>Total</div><div><b id="pA">0</b>Abiertos</div><div><b id="pC">0</b>Canjes</div></div>
+<div class="pcs" id="pbox"></div></div>
+</section>
+
+<!-- ============ CANJES ============ -->
+<section data-p="can" class="hid">
+<div class="card"><h2>Personas que canjearon</h2>
+<div class="stats"><div><b id="rN">0</b>Canjes</div><div><b id="rP">0</b>Personas</div><div><b id="rD">0</b>Por entregar</div></div>
+<div class="row" style="margin:0 0 14px"><input id="q" placeholder="Buscar por usuario, ID o código…" style="margin:0;flex:1;min-width:180px"><select id="fs" style="margin:0;width:auto"><option value="all">Todos los estados</option><option value="pend">Pendientes</option><option value="done">Entregados</option></select><select id="ft" style="margin:0;width:auto"><option value="all">Todos los códigos</option><option value="ind">Individuales</option><option value="pub">Para todos</option></select><button class="g" id="csvR" type="button">CSV</button><button class="gr" id="bulk" type="button">✔ Entregar pendientes visibles</button></div>
+<div class="tw" id="rbox"></div></div>
+</section>
+
+<div class="note">ℹ️ Los códigos y los canjes se guardan en el <b>servidor del catálogo</b>, no en tu navegador. El jugador canjea en el catálogo con su cuenta de Discord y aquí aparece quién fue, cuándo y qué ganó. Solo quien tenga el usuario y la contraseña de administrador puede usar este panel.</div>
+</div></div>
+
+<div id="cm"><div class="mb" role="dialog" aria-modal="true"><h3 id="mT"></h3><div id="mB"></div><div class="row"><button class="g" id="mC" type="button">Cancelar</button><button class="gr" id="mOk" type="button">Confirmar</button></div></div></div>
+<div id="toast"></div>
+<script src="config.js"></script>
+<script>if(/[?&]embed=1/.test(location.search))document.addEventListener("DOMContentLoaded",()=>document.body.classList.add("emb"))</script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],K='crg_sess',G=window.CRG||{},API=(G.apiUrl||'').replace(/\/+$/,'')+'/api',TZ='America/Bogota';
+let TOK='',C=[],P=[],T=[],TAB='res';
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2800)}
+const esc=t=>{const d=document.createElement('div');d.textContent=t==null?'':t;return d.innerHTML};
+function copy(t,m){(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast(m),()=>{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');toast(m)}catch(e){toast('No se pudo copiar')}a.remove()})}
+function fail(m){const e=$('#err');e.textContent=m;e.style.display='block'}
+async function diag(){
+ try{const r=await fetch(API+'/ping');if(r.ok){const d=await r.json();return d.admins?'ok':'noadmins'}return 'http'}catch(e){}
+ try{await fetch(API+'/ping',{mode:'no-cors'});return 'cors'}catch(e){return 'down'}}
+async function api(path,opt={}){let r;try{r=await fetch(API+path,{...opt,headers:{'content-type':'application/json',Authorization:TOK}})}catch(e){
+ const z=await diag(),host=API.replace(/\/api$/,'');
+ if(z=='down')throw new Error('No se pudo llegar a '+host+'. Revisa que apiUrl en config.js sea la dirección correcta de tu catálogo.');
+ if(z=='cors')throw new Error('El catálogo ('+host+') responde, pero el navegador no puede leer /api/ping. Esto suele ser un bloqueo CORS: en Netlify del CATÁLOGO revisa ALLOWED_ORIGINS e incluye el dominio exacto de este generador (https://...), o déjalo vacío.');
+ throw new Error('No se pudo completar la solicitud. Intenta de nuevo.')}
+ let d={};try{d=await r.json()}catch(e){}
+ if(r.status==401){try{sessionStorage.removeItem(K)}catch(e){}throw new Error('Usuario o contraseña incorrectos.')}
+ if(r.status==404&&!d.error)throw new Error('No se encontró el servidor de códigos. Revisa apiUrl en config.js y que el catálogo esté publicado con la carpeta netlify.');
+ if(!r.ok)throw new Error(d.error||'Error '+r.status);return d}
+const post=(p,b)=>api(p,{method:'POST',body:JSON.stringify(b)});
+
+/* ---------- utilidades ---------- */
+const rw=c=>c.kind=='discount'?c.value+'% de descuento':c.prize;
+const expInd=c=>c.exp&&new Date(c.exp+'T23:59:59-05:00')<new Date();
+const fd=t=>new Date(t).toLocaleString('es-CO',{dateStyle:'short',timeStyle:'short',timeZone:TZ});
+const fraw=r=>r?fd(new Date(r+':00-05:00').getTime()):'—';
+const coStr=ms=>new Intl.DateTimeFormat('sv-SE',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(ms)).replace(/\s+/,'T');
+const av=(u,n)=>u?`<img class="av" src="${esc(u)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`:'<span class="av" style="display:inline-block"></span>';
+function left(ms){const d=ms-Date.now();if(d<=0)return'';const m=Math.floor(d/60000),h=Math.floor(m/60),dd=Math.floor(h/24);return dd>=1?'quedan '+dd+' d '+(h%24)+' h':h>=1?'quedan '+h+' h '+(m%60)+' min':'quedan '+Math.max(1,m)+' min'}
+/* estado de un código individual / de uno para todos → [clase, texto] */
+function ist(c){if(c.active===false)return['off','Desactivado'];if(c.claims.length>=c.max)return['full','Agotado'];if(expInd(c))return['end','Vencido'];return['on','Disponible']}
+function pst(c){const n=Date.now();if(c.active===false)return['off','Desactivado'];if(c.startAt&&n<c.startAt)return['sch','Programado'];if(c.endAt&&n>=c.endAt)return['end','Cerrado por fecha'];if(c.max>0&&c.claims.length>=c.max)return['full','Agotado'];return['on','Abierto']}
+const stTag=s=>`<span class="st ${s[0]}">${s[1]}</span>`;
+const catUrl=()=>G.catalogUrl||(location.origin+'/');
+function allClaims(){const R=[];C.forEach(c=>c.claims.forEach(x=>R.push({c,x,pub:false})));P.forEach(c=>c.claims.forEach(x=>R.push({c,x,pub:true})));R.sort((a,b)=>b.x.at-a.x.at);return R}
+const findCode=code=>C.find(c=>c.code==code)||P.find(c=>c.code==code);
+
+/* ---------- ventana de confirmación ---------- */
+function closeM(){$('#cm').classList.remove('on')}
+function modal(o){$('#mT').textContent=o.title;$('#mB').innerHTML=o.html;const ok=$('#mOk');ok.classList.toggle('hid',o.ok===false);ok.textContent=o.ok||'Confirmar';ok.disabled=false;$('#mC').textContent=o.cancel||'Cancelar';$('#cm').classList.add('on');
+ ok.onclick=async()=>{ok.disabled=true;try{const r=o.onOk?await o.onOk():null;if(r===false){ok.disabled=false;return}}catch(e){toast(e.message);ok.disabled=false;return}closeM()};$('#mC').onclick=closeM}
+$('#cm').onclick=e=>{if(e.target.id=='cm')closeM()};addEventListener('keydown',e=>{if(e.key=='Escape')closeM()});
+const li=(a,b)=>`<li><span>${a}</span><b>${b}</b></li>`;
+
+/* ---------- pestañas ---------- */
+function setTab(t){TAB=t;$$('#tabs .tab').forEach(b=>b.classList.toggle('on',b.dataset.t==t));$$('section[data-p]').forEach(s=>s.classList.toggle('hid',s.dataset.p!=t));try{sessionStorage.setItem('crg_tab',t)}catch(e){}}
+$('#tabs').onclick=e=>{const b=e.target.closest('.tab');if(b)setTab(b.dataset.t)};
+
+/* ---------- RESUMEN ---------- */
+function renderRes(){
+ const R=allClaims(),pend=R.filter(r=>!r.x.delivered).length,iOn=C.filter(c=>ist(c)[0]=='on').length,pOn=P.filter(c=>pst(c)[0]=='on').length;
+ $('#kps').innerHTML=
+  `<div class="kp good"><b>${iOn}</b><span>Individuales disponibles</span><small>de ${C.length} creados</small></div>`+
+  `<div class="kp good"><b>${pOn}</b><span>Para todos abiertos</span><small>de ${P.length} creados</small></div>`+
+  `<div class="kp"><b>${R.length}</b><span>Canjes en total</span><small>${new Set(R.map(r=>r.x.uid)).size} personas</small></div>`+
+  `<div class="kp go ${pend?'warn':''}" data-go="pend"><b>${pend}</b><span>Por entregar</span><small>${pend?'toca para verlos':'todo entregado 🎉'}</small></div>`;
+ const L=R.slice(0,6);
+ $('#lastBox').innerHTML=!L.length?'<div class="empty">Aún nadie ha canjeado un código.</div>':'<table><tr><th>Fecha</th><th>Usuario</th><th>Código</th><th>Recompensa</th><th>Estado</th></tr>'+L.map(({c,x,pub})=>`<tr><td>${fd(x.at)}</td><td>${av(x.avatar)}${esc(x.name)}</td><td class="c">${esc(c.code)}</td><td>${esc(rw(c))}</td><td>${x.delivered?'<span class="ok">✔ Entregado</span>':'<span class="pend">Pendiente</span>'}</td></tr>`).join('')+'</table>';
+ const O=P.filter(c=>pst(c)[0]=='on');
+ $('#openPub').innerHTML=!O.length?'<div class="empty">No hay códigos para todos abiertos ahora mismo.</div>':'<div class="pcs">'+O.map(pubCard).join('')+'</div>'}
+$('#kps').onclick=e=>{const k=e.target.closest('[data-go]');if(k){$('#fs').value=k.dataset.go;renderCan();setTab('can')}};
+/* ---------- plantillas de premio (individual: sin prefijo · para todos: prefijo "c") ---------- */
+function renderTpl(){const o='<option value="">— Elegir plantilla —</option>'+T.map(t=>`<option value="${esc(t.id)}">${esc(t.name)} · ${esc(t.kind=='discount'?t.value+'%':t.prize)}</option>`).join('');$('#tpl').innerHTML=o;$('#ctpl').innerHTML=o}
+function kindUI(p){const pr=$('#'+p+'kind').value=='prize';$('#'+p+'lv').classList.toggle('hid',pr);$('#'+p+'lp').classList.toggle('hid',!pr)}
+function bindTpl(p){
+ $('#'+p+'kind').onchange=()=>kindUI(p);
+ $('#'+p+'tpl').onchange=()=>{const t=T.find(x=>x.id==$('#'+p+'tpl').value);if(!t)return;$('#'+p+'kind').value=t.kind;if(t.kind=='discount')$('#'+p+'value').value=t.value;else $('#'+p+'prize').value=t.prize;kindUI(p)};
+ $('#'+p+'tplSave').onclick=async()=>{const name=prompt('Nombre de la plantilla (ej: Pistola navideña):');if(!name)return;
+  try{const d=await post('/admin/templates',{name,kind:$('#'+p+'kind').value,value:$('#'+p+'value').value,prize:$('#'+p+'prize').value});T=d.templates;renderTpl();toast('Plantilla guardada ✔')}catch(e){toast(e.message)}};
+ $('#'+p+'tplDel').onclick=async()=>{const id=$('#'+p+'tpl').value;if(!id)return toast('Primero elige una plantilla');if(!confirm('¿Borrar esa plantilla?'))return;
+  try{const d=await api('/admin/templates?id='+encodeURIComponent(id),{method:'DELETE'});T=d.templates;renderTpl();toast('Plantilla borrada')}catch(e){toast(e.message)}}}
+bindTpl('');bindTpl('c');
+
+/* ---------- INDIVIDUALES ---------- */
+function renderInd(){
+ const st=C.map(ist);
+ $('#sT').textContent=C.length;$('#sA').textContent=st.filter(s=>s[0]=='on').length;$('#sU').textContent=st.filter(s=>s[0]=='full'||s[0]=='end').length;$('#sO').textContent=st.filter(s=>s[0]=='off').length;
+ const q=$('#qi').value.trim().toLowerCase(),f=$('#fi').value;
+ const V=C.filter(c=>{const s=ist(c)[0];if(f=='on'&&s!='on')return false;if(f=='off'&&s!='off')return false;if(f=='full'&&s!='full'&&s!='end')return false;return !q||[c.code,c.lot,rw(c)].join(' ').toLowerCase().includes(q)});
+ $('#box').innerHTML=!C.length?'<div class="empty">Aún no has generado códigos.</div>':!V.length?'<div class="empty">Sin resultados.</div>':'<table><tr><th>Código</th><th>Recompensa</th><th>Para</th><th>Usos</th><th>Vence</th><th>Estado</th><th>Lote</th><th></th></tr>'+V.map(c=>{const s=ist(c);return `<tr class="${s[0]=='on'?'':'used'}"><td class="c">${esc(c.code)}</td><td><span class="tag ${c.kind=='discount'?'d':'z'}">${esc(rw(c))}</span></td><td>${c.users.length?esc(c.users.join(', ')):'Todos'}</td><td>${c.claims.length}/${c.max}</td><td>${c.exp?esc(c.exp):'—'}</td><td class="w">${stTag(s)}</td><td>${esc(c.lot||'—')}</td><td class="w"><button class="g" data-a="cp" data-code="${esc(c.code)}">Copiar</button> <button class="g" data-a="tg" data-code="${esc(c.code)}">${c.active===false?'Activar':'Desactivar'}</button> <button class="g" data-a="del" data-code="${esc(c.code)}">✕</button></td></tr>`}).join('')+'</table>'}
+async function toggle(c){try{await post('/admin/toggle',{code:c.code,active:c.active===false});await load()}catch(e){toast(e.message)}}
+async function delCode(c){if(!confirm('¿Borrar '+c.code+(c.claims.length?' y su registro de '+c.claims.length+' canje(s)':'')+'?'))return;try{await api('/admin/codes?code='+encodeURIComponent(c.code),{method:'DELETE'});await load()}catch(x){toast(x.message)}}
+$('#box').onclick=e=>{const b=e.target.closest('button');if(!b)return;const c=findCode(b.dataset.code);if(!c)return;const a=b.dataset.a;if(a=='cp')copy(c.code,'Código copiado');if(a=='tg')toggle(c);if(a=='del')delCode(c)};
+$('#qi').oninput=renderInd;$('#fi').onchange=renderInd;$('#rel').onclick=load;
+$('#gen').onclick=()=>{
+ const ids=$('#users').value.split(/[\s,;]+/).filter(Boolean),bad=ids.filter(u=>!/^\d{15,20}$/.test(u));
+ if(bad.length)return toast('ID de Discord no válido: "'+bad[0]+'". Son 17 a 19 números, ej: 123456789012345678');
+ const k=$('#kind').value,v=+$('#value').value,pz=$('#prize').value.trim();
+ if(k=='discount'&&!(v>=1&&v<=100))return toast('El descuento debe estar entre 1% y 100%.');
+ if(k=='prize'&&!pz)return toast('Escribe cuál es el premio.');
+ const qty=ids.length?ids.length:Math.min(500,Math.max(1,Math.round(+$('#qty').value)||1)),mx=ids.length?1:Math.max(1,Math.round(+$('#max').value)||1),pre=$('#pre').value.toUpperCase().replace(/[^A-Z0-9-]/g,'').slice(0,12),len=+$('#len').value,
+  ej=(pre?pre+'-':'')+Array(len/4).fill('XXXX').join('-');
+ modal({title:'Revisa antes de crear',ok:'Sí, crear',html:'<ul>'+li('Recompensa',esc(k=='discount'?v+'% de descuento':pz))+li('Códigos a crear',qty)+li('Usos por código',mx)+li('Para',ids.length?ids.length+' usuario(s) de Discord (códigos personales)':'Cualquier persona')+li('Vence',$('#exp').value||'No vence')+li('Lote',esc($('#lot').value||'—'))+li('Formato','<span class="c">'+esc(ej)+'</span>')+'</ul>',
+  onOk:async()=>{const d=await post('/admin/codes',{kind:k,value:$('#value').value,prize:$('#prize').value,prefix:$('#pre').value,qty:$('#qty').value,len:$('#len').value,max:$('#max').value,exp:$('#exp').value,lot:$('#lot').value,users:$('#users').value});
+   toast(d.made.length+' código(s) generado(s) 🎁');$('#users').value='';await load()}})};
+$('#cpA').onclick=()=>{const a=C.filter(c=>ist(c)[0]=='on').map(c=>c.code);a.length?copy(a.join('\n'),a.length+' código(s) copiado(s)'):toast('No hay códigos disponibles')};
+
+/* ---------- CÓDIGO PARA TODOS ---------- */
+function pubCard(c){
+ const s=pst(c),pct=c.max>0?Math.min(100,Math.round(c.claims.length*100/c.max)):0,cupos=c.max>0?c.claims.length+' / '+c.max+' personas':c.claims.length+' personas (sin tope de cupos)';
+ return `<div class="pc ${c.active===false?'off':''}"><div class="ph"><span class="c">${esc(c.code)}</span>${stTag(s)}</div>
+ <div style="margin-top:8px"><span class="tag ${c.kind=='discount'?'d':'z'}">${esc(rw(c))}</span> <span class="id">${esc(c.lot||'')}</span></div>
+ ${c.max>0?`<div class="bar"><i style="width:${pct}%"></i></div>`:'<div style="height:12px"></div>'}
+ <small><b>${cupos}</b><br>Abre: ${c.startAt?fraw(c.start):'ya abierto'} · Cierra: ${c.endAt?fraw(c.end)+(s[0]=='on'&&left(c.endAt)?' ('+left(c.endAt)+')':''):'sin fecha'}${c.desc?'<br>📝 '+esc(c.desc):''}</small>
+ <div class="row"><button class="g" data-a="cp" data-code="${esc(c.code)}">Copiar</button><button class="g" data-a="an" data-code="${esc(c.code)}">📣 Anuncio</button><button class="g" data-a="ed" data-code="${esc(c.code)}">✏ Ampliar</button><button class="g" data-a="tg" data-code="${esc(c.code)}">${c.active===false?'Activar':'Desactivar'}</button><button class="g" data-a="del" data-code="${esc(c.code)}">✕</button></div></div>`}
+function renderPub(){
+ $('#pT').textContent=P.length;$('#pA').textContent=P.filter(c=>pst(c)[0]=='on').length;$('#pC').textContent=P.reduce((n,c)=>n+c.claims.length,0);
+ $('#pbox').innerHTML=!P.length?'<div class="empty" style="grid-column:1/-1">Aún no has creado códigos para todos.</div>':P.map(pubCard).join('')}
+function anuncio(c){return '🎁 ¡CÓDIGO COLOMBIA REALS!\nCódigo: '+c.code+'\nRecompensa: '+rw(c)+'\n'+(c.max>0?'Cupos: '+c.max+' personas\n':'')+(c.endAt?'Cierra: '+fraw(c.end)+' (hora Colombia)\n':'')+'Canjéalo en '+catUrl()+' con tu cuenta de Discord (botón "Canje limitado").\nUna vez por persona. ¡Corre antes de que se acaben! 🎄'}
+function editPub(c){
+ modal({title:'Ampliar '+c.code,ok:'Guardar cambios',html:`<div class="f"><label>Cupos (0 = sin tope)<input id="eMax" type="number" min="0" max="99999" value="${c.max}"></label><label>Abre el<input id="eStart" type="datetime-local" value="${esc(c.start||'')}"></label><label class="wide">Cierra el<input id="eEnd" type="datetime-local" value="${esc(c.end||'')}"><span class="hint">Hoy van ${c.claims.length} canje(s). Dejar la fecha vacía quita el cierre por fecha; debe quedar al menos un límite. Hora de Colombia.</span></label></div>`,
+  onOk:async()=>{await post('/admin/community/update',{code:c.code,max:$('#eMax').value,start:$('#eStart').value,end:$('#eEnd').value});toast('Código actualizado ✔');await load()}})}
+function pubAction(e){const b=e.target.closest('button');if(!b)return;const c=findCode(b.dataset.code);if(!c)return;const a=b.dataset.a;
+ if(a=='cp')copy(c.code,'Código copiado');if(a=='an')copy(anuncio(c),'Anuncio copiado: pégalo en Discord');if(a=='ed')editPub(c);if(a=='tg')toggle(c);if(a=='del')delCode(c)}
+$('#pbox').onclick=pubAction;$('#openPub').onclick=pubAction;
+$('#cchips').onclick=e=>{const b=e.target.closest('button');if(!b)return;
+ if(b.dataset.h)$('#cend').value=coStr(Date.now()+b.dataset.h*3600e3);
+ if(b.dataset.x=='clr')$('#cend').value='';
+ if(b.dataset.x=='nav'){const y=+coStr(Date.now()).slice(0,4);let t=y+'-12-24T23:59';if(new Date(t+':00-05:00')<new Date())t=(y+1)+'-12-24T23:59';$('#cend').value=t}};
+$('#cgen').onclick=()=>{
+ const k=$('#ckind').value,v=+$('#cvalue').value,pz=$('#cprize').value.trim(),mx=Math.max(0,Math.round(+$('#cmax').value)||0),st=$('#cstart').value,en=$('#cend').value,cd=$('#ccode').value.toUpperCase().replace(/[^A-Z0-9-]/g,'');
+ if(k=='discount'&&!(v>=1&&v<=100))return toast('El descuento debe estar entre 1% y 100%.');
+ if(k=='prize'&&!pz)return toast('Escribe cuál es el premio.');
+ if(cd&&(cd.length<6||cd.length>40))return toast('El código debe tener entre 6 y 40 caracteres.');
+ if(!mx&&!en)return toast('Pon al menos un límite: cupos o fecha de cierre.');
+ if(en&&new Date(en+':00-05:00')<=new Date())return toast('La fecha de cierre ya pasó.');
+ if(st&&en&&en<=st)return toast('El cierre debe ser después de la apertura.');
+ modal({title:'Revisa antes de crear',ok:'Sí, crear código',html:'<ul>'+li('Código',cd?'<span class="c">'+esc(cd)+'</span>':'Automático ('+esc($('#cpre').value||'sin prefijo')+'-XXXX-XXXX)')+li('Recompensa',esc(k=='discount'?v+'% de descuento':pz))+li('Cupos',mx?mx+' personas':'Sin tope')+li('Abre',st?fraw(st):'Ya abierto')+li('Cierra',en?fraw(en):'Sin fecha')+li('Reglas','1 canje por cuenta de Discord')+'</ul><p class="hint">Se cierra cuando se acaben los cupos o llegue la fecha, lo que pase primero.</p>',
+  onOk:async()=>{const d=await post('/admin/community',{code:cd,prefix:$('#cpre').value,kind:k,value:$('#cvalue').value,prize:$('#cprize').value,lot:$('#clot').value,desc:$('#cdesc').value,max:mx,start:st,end:en});await load();const c=d.made[0];
+   setTimeout(()=>modal({title:'¡Código creado! 🎄',ok:'Copiar anuncio',cancel:'Cerrar',html:'<div class="big">'+esc(c.code)+'</div><p class="hint" style="text-align:center">Copia el anuncio y pégalo en Discord para que la gente lo canjee.</p>',onOk:()=>{copy(anuncio(c),'Anuncio copiado: pégalo en Discord');return false}}),80)}})};
+
+/* ---------- CANJES ---------- */
+function visible(){const q=$('#q').value.trim().toLowerCase(),s=$('#fs').value,t=$('#ft').value;
+ return allClaims().filter(({c,x,pub})=>(s=='all'||(s=='pend'?!x.delivered:!!x.delivered))&&(t=='all'||(t=='pub')==pub)&&(!q||[x.name,x.uid,c.code,rw(c)].join(' ').toLowerCase().includes(q)))}
+function renderCan(){
+ const R=allClaims();$('#rN').textContent=R.length;$('#rP').textContent=new Set(R.map(r=>r.x.uid)).size;$('#rD').textContent=R.filter(r=>!r.x.delivered).length;
+ const V=visible();
+ $('#rbox').innerHTML=!V.length?'<div class="empty">'+(R.length?'Sin resultados.':'Aún nadie ha canjeado un código. Cuando alguien lo haga con su cuenta de Discord, aparecerá aquí.')+'</div>':'<table><tr><th>#</th><th>Fecha</th><th>Usuario de Discord</th><th>ID</th><th>Código</th><th>Recompensa</th><th>Estado</th><th></th></tr>'+V.map(({c,x,pub},n)=>`<tr><td>${n+1}</td><td>${fd(x.at)}</td><td>${av(x.avatar)}${esc(x.name)}</td><td class="id">${esc(x.uid)}</td><td class="c">${pub?'🌎 ':''}${esc(c.code)}</td><td>${esc(rw(c))}</td><td>${x.delivered?'<span class="ok">✔ Entregado</span>'+(x.by?' <span class="id">por '+esc(x.by)+'</span>':''):'<span class="pend">Pendiente</span>'}</td><td><button class="g" data-k="${x.delivered?'undeliver':'deliver'}" data-code="${esc(c.code)}" data-uid="${esc(x.uid)}">${x.delivered?'Reabrir':'Entregar'}</button> <button class="g" data-k="remove" data-code="${esc(c.code)}" data-uid="${esc(x.uid)}">✕</button></td></tr>`).join('')+'</table>'}
+$('#rbox').onclick=async e=>{const b=e.target.closest('button');if(!b||!b.dataset.k)return;const d=b.dataset;
+ if(d.k=='remove'&&!confirm('¿Quitar este canje? La persona podrá volver a canjear el código.'))return;
+ try{await post('/admin/claim',{code:d.code,uid:d.uid,action:d.k});await load()}catch(x){toast(x.message)}};
+['#q'].forEach(s=>$(s).oninput=renderCan);['#fs','#ft'].forEach(s=>$(s).onchange=renderCan);
+$('#bulk').onclick=()=>{const items=visible().filter(r=>!r.x.delivered).map(r=>({code:r.c.code,uid:r.x.uid}));
+ if(!items.length)return toast('No hay canjes pendientes en esta vista');
+ modal({title:'Entregar en lote',ok:'Marcar como entregados',html:'<p style="line-height:1.6;font-size:14px;color:#d5cacc">Vas a marcar <b>'+items.length+'</b> canje(s) como <b>entregados</b>. Hazlo solo cuando ya les diste el premio.</p>',
+  onOk:async()=>{const d=await post('/admin/claim',{action:'deliver',items:items.slice(0,300)});toast(d.n+' canje(s) marcados como entregados ✔');await load()}})};
+function csv(name,rows){const q=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"',a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+rows.map(r=>r.map(q).join(',')).join('\n')],{type:'text/csv;charset=utf-8'}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+$('#csvC').onclick=()=>C.length?csv('codigos-colombia-reals.csv',[['codigo','tipo','descuento','premio','para_ids','usos','usos_max','vence','estado','lote','creado']].concat(C.map(c=>[c.code,c.kind,c.value,c.prize,c.users.join(' '),c.claims.length,c.max,c.exp,ist(c)[1],c.lot,new Date(c.createdAt).toISOString()]))):toast('No hay códigos');
+$('#csvR').onclick=()=>{const r=allClaims().map(({c,x,pub})=>[new Date(x.at).toISOString(),x.name,x.uid,c.code,pub?'para todos':'individual',rw(c),x.delivered?'entregado':'pendiente',x.by||'']);r.length?csv('canjes-colombia-reals.csv',[['fecha','usuario_discord','discord_id','codigo','sistema','recompensa','estado','entregado_por']].concat(r)):toast('No hay canjes')};
+
+/* ---------- carga y sesión ---------- */
+function render(){renderRes();renderInd();renderPub();renderCan()}
+async function load(){try{const d=await api('/admin/codes');C=d.codes;P=d.community||[];try{T=(await api('/admin/templates')).templates||[]}catch(e){}$('#err').style.display='none';renderTpl();render()}catch(e){fail(e.message)}}
+function showLogin(msg){if(!msg||/contraseña|sesión|Inicia/i.test(msg)){try{sessionStorage.removeItem('cr_admin')}catch(x){}(window.top||window).location.replace('/admin-login.html?e=expired');return}$('#app').classList.add('hid');$('#lg').classList.remove('hid');const e=$('#lgE');if(msg){e.textContent=msg;e.style.display='block'}else e.style.display='none'}
+async function start(u,tok){
+ TOK=tok;
+ try{const d=await api('/admin/codes');C=d.codes;P=d.community||[];try{T=(await api('/admin/templates')).templates||[]}catch(e){T=[]}
+  
+  $('#me').querySelectorAll('.un').forEach(n=>n.remove());
+  $('#me').insertAdjacentHTML('afterbegin','<span class="un">'+esc(u)+'</span>');
+  $('#lgP').value='';$('#err').style.display='none';$('#lg').classList.add('hid');$('#app').classList.remove('hid');renderTpl();render();
+  let t='res';try{t=sessionStorage.getItem('crg_tab')||'res'}catch(e){}setTab(t);return true}
+ catch(e){TOK='';try{sessionStorage.removeItem(K)}catch(x){}showLogin(e.message);return false}}
+const goLogin=e=>{try{sessionStorage.removeItem('cr_admin')}catch(x){}(window.top||window).location.replace('/admin-login.html'+(e?'?e='+e:''))};
+$('#out').onclick=()=>goLogin();
+if(G.catalogUrl)$('#cat').href=G.catalogUrl;else $('#cat').remove();
+(()=>{let t=null;try{t=JSON.parse(sessionStorage.getItem('cr_admin')||'null')}catch(e){}
+ if(t&&t.t&&t.e>Date.now())start(t.n||'admin','Bearer '+t.t);else goLogin()})();
+</script></body></html>

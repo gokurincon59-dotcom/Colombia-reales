@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Panel del staff · COLOMBIA REALS</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#090506">
+<link rel="icon" href="assets/logo-cr.webp"><script src="assets/config.js"></script>
+<style>
+:root{--a:#e01322;--bg:#090506;--p:#140a0d;--l:#3a141b;--g:#ffd66b;--m:#b9aeb0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#fff;font:14px Poppins,"Segoe UI",Arial,sans-serif;min-height:100vh}
+button,input,select,textarea{font:600 13px Poppins,Arial,sans-serif;color:#fff;background:#1f0d11;border:1px solid #4b171f;border-radius:9px;padding:10px 12px;outline:none}
+input,textarea,select{width:100%}textarea{min-height:80px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:var(--a)}button{cursor:pointer}button:hover{filter:brightness(1.2)}
+.go{background:linear-gradient(135deg,var(--a),#5a0a12);border-color:var(--a)}.ok{background:#0b5a2a;border-color:#1f8a46}.no{background:#4a0d14;border-color:#8a1019}
+.box{width:min(400px,92vw);margin:9vh auto 0;background:rgba(20,10,13,.95);border:1px solid var(--l);border-radius:18px;padding:28px 24px;box-shadow:0 0 50px rgba(224,19,34,.2);text-align:center}
+.box img{width:70px}.box h1{font:36px "Bebas Neue",Impact,sans-serif;letter-spacing:3px;margin:4px 0}.box p{color:var(--m);font-size:12.5px}.box label{display:block;text-align:left;font-size:12px;color:var(--m);margin:12px 0 5px}
+.er{display:none;margin-top:12px;padding:10px;border-radius:10px;background:rgba(255,24,37,.12);border:1px solid #ff4550;color:#ffb3b8;font-size:12.5px}
+#app{display:none}header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 20px;border-bottom:3px solid var(--a);background:#0d0608}
+header h1{font:30px "Bebas Neue",Impact,sans-serif;letter-spacing:2px;margin:0;flex:1;min-width:200px}header small{display:block;color:var(--m);font:12px Poppins,sans-serif;letter-spacing:0}
+.tag{display:inline-block;padding:3px 10px;border-radius:99px;border:1px solid var(--a);color:var(--a);font-size:11px;font-weight:700}
+nav{display:flex;gap:6px;flex-wrap:wrap;padding:12px 20px 0}nav button.on{background:var(--a);border-color:var(--a)}
+main{padding:16px 20px 60px;max-width:1000px}.c{background:var(--p);border:1px solid var(--l);border-radius:14px;padding:16px;margin-bottom:14px}
+h2{font:22px "Bebas Neue",Impact,sans-serif;letter-spacing:2px;color:var(--g);margin:0 0 10px}.m{color:var(--m);font-size:12px}
+.row{padding:10px 12px;margin-bottom:8px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid #2e1217;display:flex;gap:10px;flex-wrap:wrap;align-items:center}.row .in{flex:1;min-width:200px;word-break:break-word}
+.bar{height:10px;border-radius:9px;background:#26131a;overflow:hidden}.bar i{display:block;height:100%;background:var(--a)}
+.st{font-size:11px;padding:2px 9px;border-radius:99px;border:1px solid #555}.st.aprobado{color:#5dffa0;border-color:#1f8a46}.st.rechazado{color:#ff8a92;border-color:#8a1019}.st.pendiente{color:var(--g);border-color:#8a6a10}
+ul{margin:0;padding-left:18px;line-height:1.8}.pane{display:none}.pane.on{display:block}.f{display:grid;gap:8px;margin-bottom:12px}
+</style></head><body>
+<div id="lg" class="box"><img src="assets/logo-cr.webp" alt=""><h1>PANEL DEL STAFF</h1><p>Entra con el usuario y la contraseña de tu rango.</p>
+<form id="f"><label for="u">Usuario</label><input id="u" autocomplete="username" autocapitalize="none" spellcheck="false"><label for="p">Contraseña</label><input id="p" type="password" autocomplete="current-password">
+<div class="er" id="er"></div><button class="go" style="width:100%;margin-top:16px">ENTRAR</button></form><p><a href="index.html" style="color:var(--g)">← Volver al catálogo</a></p></div>
+<div id="app"><header><h1 id="ti"></h1><span class="tag" id="tg"></span><button id="out">Salir</button></header><nav id="nv"></nav><main id="mn"></main></div>
+<script>
+(()=>{
+const C=window.CR||{},K='cr_staff',$=i=>document.getElementById(i),E=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ses=()=>{try{const s=JSON.parse(sessionStorage.getItem(K)||'null');return s&&s.e>Date.now()?s:null}catch(e){return null}};
+const fmt=t=>t?new Date(t).toLocaleString('es-CO',{dateStyle:'short',timeStyle:'short'}):'—';
+async function api(p,o){const s=ses();const r=await fetch((C.apiUrl||'')+'/api/staff'+p,{...o,headers:{'content-type':'application/json',Authorization:'Bearer '+(s?s.t:'')}});let d={};try{d=await r.json()}catch(e){}if(r.status===401&&s)out();if(!r.ok)throw new Error(d.error||'Error '+r.status);return d}
+const post=(p,b)=>api(p,{method:'POST',body:JSON.stringify(b)});
+function out(){sessionStorage.removeItem(K);location.reload()}
+$('out').onclick=out;
+$('f').onsubmit=async e=>{e.preventDefault();const er=$('er');er.style.display='none';
+ try{const r=await fetch((C.apiUrl||'')+'/api/staff/login',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({user:$('u').value.trim(),pass:$('p').value})});const d=await r.json().catch(()=>({}));
+  if(!r.ok)throw new Error(d.error||'No se pudo iniciar sesión ('+r.status+').');sessionStorage.setItem(K,JSON.stringify({t:d.token,e:d.exp}));$('p').value='';start()}
+ catch(x){er.textContent=x instanceof TypeError?'No hay conexión con el servidor.':x.message;er.style.display='block'}};
+let me,tab;
+async function start(){if(!ses())return;try{me=await api('/me')}catch(e){return}
+ $('lg').style.display='none';$('app').style.display='block';document.documentElement.style.setProperty('--a',me.role.color);
+ $('ti').innerHTML=E(me.role.name)+'<small>'+E(me.role.group)+' · '+E(me.user)+'</small>';$('tg').textContent='Rango '+me.role.level+' de '+me.role.total;
+ const T=[['res','Resumen'],['rep','Reportes'],['tar','Tareas'],['ann','Anuncios']];if(me.can.team)T.push(['eq','Equipo']);if(me.can.log)T.push(['reg','Registro']);
+ $('nv').innerHTML=T.map(t=>'<button data-t="'+t[0]+'">'+t[1]+'</button>').join('');$('nv').onclick=e=>{const b=e.target.closest('button');if(b)show(b.dataset.t)};show('res')}
+async function show(t){tab=t;[...$('nv').children].forEach(b=>b.classList.toggle('on',b.dataset.t===t));const mn=$('mn');mn.innerHTML='<p class="m">Cargando…</p>';
+ try{mn.innerHTML=await V[t]();if(W[t])W[t]()}catch(e){mn.innerHTML='<div class="c">'+E(e.message)+'</div>'}}
+const V={
+ res:async()=>{const r=me.role,p=Math.round(r.level/r.total*100);return '<div class="c"><h2>Tu panel</h2><p class="m">Nivel en la jerarquía: '+r.level+' de '+r.total+'</p><div class="bar"><i style="width:'+p+'%"></i></div></div><div class="c"><h2>Tus funciones · '+E(r.group)+'</h2><ul>'+r.funciones.map(f=>'<li>'+E(f)+'</li>').join('')+'</ul></div><div class="c"><h2>Permisos de tu rango</h2><ul><li>Enviar reportes</li><li>Recibir y completar tareas</li><li>Leer anuncios</li>'+(me.can.review?'<li>Revisar reportes y asignar tareas a rangos inferiores</li><li>Publicar anuncios</li>':'')+(me.can.team?'<li>Ver el equipo y el registro de actividad</li>':'')+'</ul></div>'},
+ rep:async()=>{const d=await api('/reports');return '<div class="c"><h2>Nuevo reporte</h2><div class="f"><input id="rt" maxlength="80" placeholder="Título"><textarea id="rx" maxlength="1500" placeholder="Detalle"></textarea><button class="go" id="rs">Enviar reporte</button></div></div><div class="c"><h2>'+(me.can.review?'Reportes tuyos y de rangos inferiores':'Tus reportes')+'</h2>'+(d.reports.map(r=>'<div class="row"><div class="in"><b>'+E(r.title)+'</b> <span class="st '+r.status+'">'+r.status+'</span><br><span class="m">'+E(r.roleName)+' · '+E(r.by)+' · '+fmt(r.t)+'</span><br>'+E(r.text)+(r.note?'<br><span class="m">Nota: '+E(r.note)+'</span>':'')+'</div>'+(me.can.review&&r.by!==me.user?'<button class="ok" data-v="aprobado" data-i="'+r.id+'">Aprobar</button><button class="no" data-v="rechazado" data-i="'+r.id+'">Rechazar</button>':'')+'</div>').join('')||'<p class="m">Aún no hay reportes.</p>')+'</div>'},
+ tar:async()=>{const d=await api('/tasks');return (me.can.review?'<div class="c"><h2>Asignar tarea</h2><div class="f"><select id="tt">'+me.roles.map(r=>'<option value="'+r.id+'">'+E(r.name)+'</option>').join('')+'</select><input id="tx" maxlength="300" placeholder="Tarea"><button class="go" id="ts">Asignar</button></div></div>':'')+'<div class="c"><h2>Tareas</h2>'+(d.tasks.map(t=>'<div class="row"><div class="in">'+(t.done?'✅ ':'⬜ ')+E(t.text)+'<br><span class="m">De '+E(t.by)+' ('+E(t.byRole)+') para '+E(t.toName)+' · '+fmt(t.t)+'</span></div><button data-d="'+t.id+'" data-v="'+(t.done?0:1)+'">'+(t.done?'Reabrir':'Completar')+'</button></div>').join('')||'<p class="m">No hay tareas.</p>')+'</div>'},
+ ann:async()=>(me.can.news?'<div class="c"><h2>Publicar anuncio</h2><div class="f"><input id="nt" maxlength="80" placeholder="Título"><textarea id="nx" maxlength="600" placeholder="Mensaje"></textarea><button class="go" id="ns">Publicar</button></div></div>':'')+'<div class="c"><h2>Anuncios del staff</h2>'+(me.news.map(n=>'<div class="row"><div class="in"><b>'+E(n.title)+'</b><br><span class="m">'+E(n.role)+' · '+E(n.by)+' · '+fmt(n.t)+'</span><br>'+E(n.text)+'</div></div>').join('')||'<p class="m">Sin anuncios.</p>')+'</div>',
+ eq:async()=>{const d=await api('/team');return '<div class="c"><h2>Equipo</h2>'+d.team.map(x=>'<div class="row"><div class="in"><b>'+E(x.user)+'</b> · '+E(x.role)+'</div><span class="m">Último ingreso: '+fmt(x.last)+'</span></div>').join('')+'</div>'},
+ reg:async()=>{const d=await api('/log');return '<div class="c"><h2>Registro de actividad del staff</h2>'+(d.log.map(x=>'<div class="row"><div class="in"><b>'+E(x.by)+'</b> · '+E(x.act)+'<br><span class="m">'+E(x.info)+'</span></div><span class="m">'+fmt(x.t)+'</span></div>').join('')||'<p class="m">Sin actividad.</p>')+'</div>'}};
+const W={
+ rep:()=>{$('rs').onclick=async()=>{try{await post('/reports',{title:$('rt').value,text:$('rx').value});show('rep')}catch(e){alert(e.message)}};
+  $('mn').onclick=async e=>{const b=e.target.closest('[data-i]');if(!b)return;try{const n=prompt('Nota (opcional):','');if(n===null)return;await post('/reports/review',{id:b.dataset.i,status:b.dataset.v,note:n});show('rep')}catch(x){alert(x.message)}}},
+ tar:()=>{if($('ts'))$('ts').onclick=async()=>{try{await post('/tasks',{to:$('tt').value,text:$('tx').value});show('tar')}catch(e){alert(e.message)}};
+  $('mn').onclick=async e=>{const b=e.target.closest('[data-d]');if(!b)return;try{await post('/tasks/done',{id:b.dataset.d,done:b.dataset.v==='1'});show('tar')}catch(x){alert(x.message)}}},
+ ann:()=>{if($('ns'))$('ns').onclick=async()=>{try{await post('/news',{title:$('nt').value,text:$('nx').value});me=await api('/me');show('ann')}catch(e){alert(e.message)}}}};
+start();
+})();
+</script></body></html>

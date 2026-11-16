@@ -1,0 +1,38 @@
+COLOMBIA REALS — PAQUETE LISTO PARA NETLIFY
+===========================================
+
+ESTE ZIP YA ESTÁ ORGANIZADO PARA PUBLICAR:
+- index.html queda directamente en la raíz del ZIP.
+- Incluye login, catálogo, Navidad, facciones, VIP, panel, staff y funciones Netlify.
+- Conserva package.json, netlify.toml, assets/ y netlify/functions/.
+- Se actualizó el service worker para que HTML, CSS y JavaScript consulten primero la versión nueva.
+- Se ajustó la caché de Netlify para revalidar los archivos de la aplicación.
+
+MÉTODO 1 — RECOMENDADO (para conservar /api y las funciones)
+1. Extrae TODO el contenido de este ZIP en una carpeta.
+2. Sube el contenido completo a GitHub, de modo que index.html, netlify.toml y package.json queden en la raíz del repositorio (NO dentro de otra carpeta).
+3. En Netlify abre el sitio correcto y entra a Site configuration > Build & deploy > Continuous deployment.
+4. Conecta ese repositorio. Build command: vacío. Publish directory: ".".
+   El netlify.toml ya define publish="." y functions="netlify/functions".
+5. Haz un deploy nuevo y espera a que termine como Published.
+6. Comprueba https://TU-SITIO.netlify.app/ y https://TU-SITIO.netlify.app/api/ping
+
+MÉTODO 2 — ARRRASTRAR Y SOLTAR (solo sitio estático)
+1. Extrae el ZIP.
+2. Arrastra a Netlify la carpeta extraída que CONTIENE directamente index.html.
+3. Esto publica los archivos estáticos, pero NO garantiza que las funciones /api se instalen.
+   Para el catálogo completo con racha, ruleta, canjes y panel conectado, usa el método 1.
+
+SI SIGUE SALIENDO LA PÁGINA VIEJA
+1. En Netlify confirma que estás entrando al mismo sitio/dominio donde hiciste el deploy.
+2. En Deploys, abre el último deploy y verifica que esté marcado Published.
+3. En el navegador pulsa Ctrl + Shift + R.
+4. Si la página sigue igual, abre DevTools > Application > Service Workers y pulsa Unregister;
+   luego Application > Storage > Clear site data. Cierra esa pestaña y abre de nuevo el dominio.
+5. Verifica que no estés abriendo una copia local file:/// o un dominio de un sitio Netlify anterior.
+
+IMPORTANTE
+- No borres las carpetas assets/ ni netlify/.
+- No publiques solamente index.html.
+- Las funciones necesitan Git deploy y las variables de entorno que ya documenta LEEME.txt.
+- Antes de publicar revisa las variables y premios automáticos descritos en LEEME.txt.

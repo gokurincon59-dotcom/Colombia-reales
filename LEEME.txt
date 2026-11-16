@@ -1,0 +1,251 @@
+COLOMBIA REALS - CATÁLOGO PÚBLICO + SERVIDOR DE CÓDIGOS
+========================================================
+
+IMPORTANTE: este proyecto contiene el catálogo y el servidor (/api/*). Debes publicarlo
+como sitio Netlify conectado a Git para que Netlify instale @netlify/blobs y despliegue
+la función. NO basta con arrastrar index.html ni con publicar solo archivos estáticos.
+
+PUBLICACIÓN RECOMENDADA (GitHub + Netlify)
+1. En GitHub crea un repositorio nuevo.
+2. Descomprime colombia_reals_catalogo.zip en tu computador.
+3. Entra a la carpeta colombia_reals_catalogo y sube TODO su CONTENIDO al nivel principal
+   del repositorio. Deben quedar en la raíz: index.html, package.json, netlify.toml,
+   la carpeta netlify/ y la carpeta assets/.
+4. En Netlify: Add new site -> Import an existing project -> GitHub. Selecciona el
+   repositorio y publica. No cambies el directorio de publicación: netlify.toml ya indica
+   que el sitio publica desde la raíz y que las funciones están en netlify/functions.
+5. Espera a que el deploy termine correctamente.
+
+COMPROBAR EL SERVIDOR
+Abre esta dirección, sustituyendo el dominio por el de tu catálogo:
+  https://TU-CATALOGO.netlify.app/api/ping
+Debe responder un JSON parecido a:
+  {"ok":true,"admins":true}
+Si aparece Page not found, el deploy no incluyó la función. Revisa que netlify/functions/api.mjs,
+netlify/functions/lib/ y package.json estén en GitHub y vuelve a publicar.
+
+CONFIGURAR ADMINISTRADOR EN NETLIFY
+En el sitio del CATÁLOGO: Site configuration -> Environment variables:
+  ADMIN_DISCORD_IDS = ID numérico de tu usuario de Discord (varios IDs separados por coma).
+  DISCORD_CLIENT_ID = 1569929106370338816
+Guarda y haz un nuevo deploy. El valor de ADMIN_DISCORD_IDS es obligatorio para usar el panel.
+
+CORS / CONEXIÓN CON EL GENERADOR
+El generador está en otro dominio. Si defines ALLOWED_ORIGINS, agrega el origen exacto
+que aparece en la barra del navegador al abrir el generador, por ejemplo:
+  ALLOWED_ORIGINS = https://TU-GENERADOR.netlify.app
+Sin ruta final ni barra adicional. Si ALLOWED_ORIGINS no está configurada, el servidor
+permite solicitudes desde cualquier origen. Si ya la configuraste y no coincide exactamente,
+el navegador bloqueará la conexión. Después de cambiar variables, vuelve a publicar.
+
+DISCORD OAUTH2
+En Discord Developer Portal -> aplicación con Client ID 1569929106370338816 -> OAuth2 ->
+Redirects, registra las dos direcciones con barra final:
+  https://TU-CATALOGO.netlify.app/
+  https://TU-GENERADOR.netlify.app/
+Usa los dominios reales de tus sitios Netlify. Deben coincidir exactamente.
+
+NOTAS
+- Los códigos y canjes se almacenan en Netlify Blobs del catálogo.
+- El generador es un sitio aparte; publica codigos_generador.zip como OTRO sitio Netlify.
+- No compartas el enlace del generador: es un panel administrativo.
+- El archivo assets/config.js ya contiene el Client ID y el dominio de catálogo que estaban
+  en los archivos recibidos. Si cambias el dominio del catálogo, actualiza redirectUri.
+
+== IDEAS NUEVAS (assets/ideas.js) ==
+Se editan en assets/config.js agregando dentro de window.CR:  ideas:{ oferta:{titulo,texto,items:[numeros],fin:"2026-12-25T23:59:00"}, hot:[numeros], nuevo:[numeros], combos:[{t,i:[...],p}], eventos:[{f:"12-24",t,d}], adviento:[25 textos], testimonios:[{n,t,f}] }
+Si no pones nada, se usan los valores por defecto del archivo.
+
+
+== MEGA 7: FIESTA, FX Y PANEL ==
+NUEVOS ARCHIVOS: assets/fiesta.js, assets/fx.js, assets/fiesta.css, panel.html
+(+ cambios en netlify/functions/lib/logic.mjs y api.mjs, y un aviso de notas en assets/extra.js)
+
+QUÉ FUNCIONA SIN SERVIDOR (basta con publicar los archivos):
+  - Lista de deseos (♥ → botón 🛍️), Armar combo, Regalar (tarjeta de regalo), puerta de Adviento de hoy
+    brillando con cuenta regresiva, cambio automático de temporada, modo Nochebuena, fuegos de Año Nuevo y
+    la animación del arma al canjear.
+QUÉ NECESITA EL SERVIDOR (/api, publicación con Git + @netlify/blobs):
+  - Código del día, Racha de visitas, Ruleta diaria, "Quedan X" desde el panel, Los más pedidos,
+    Resumen del año, estadísticas, alertas, registro de actividad y límite por persona.
+  Si el servidor no responde, esas tarjetas simplemente no aparecen (el resto sigue funcionando).
+
+PREMIOS AUTOMÁTICOS (variables de entorno opcionales en Netlify; si no pones nada se usan los de abajo)
+  ¡OJO! Por defecto REGALAN premios reales. Revísalos o apágalos antes de publicar.
+  DAILY_ON=0            apaga el código del día          (por defecto: encendido)
+  DAILY_MAX=10          cupos del código del día
+  DAILY_REWARDS         rota por día. Por defecto: 5% · 10% · Skin sorpresa · 7% · Sorpresa del staff
+                        ej: [{"kind":"discount","value":5},{"kind":"prize","prize":"Skin sorpresa"}]
+  DAILY_SPECIAL         premios de fechas especiales (MM-DD). Por defecto 12-24, 12-25, 12-31 y 01-01
+                        son "Regalo de …" (el staff decide qué entrega). ej: {"12-25":{"kind":"discount","value":20}}
+  SPIN_ON=0             apaga la ruleta
+  SPIN_PRIZES           pesos "w" (mayor = más probable). Por defecto: 45 nada · 30 5% · 15 10% · 8 15% · 2 premio sorpresa
+                        ej: [{"none":true,"w":60},{"kind":"discount","value":5,"w":40}]   (mínimo 2 casillas)
+  STREAK_ON=0           apaga la racha
+  STREAK_REWARDS        por defecto: 3 días 3% · 7 días 7% · 15 días 15% (cada hito se gana 1 vez al mes)
+                        ej: [{"days":3,"kind":"discount","value":3}]
+  Los premios de ruleta y racha se crean como códigos PERSONALES (solo los puede canjear quien los ganó),
+  y los del código del día como códigos con cupos. Todos aparecen en el generador con su lote
+  ("Código del día", "Ruleta diaria", "Racha de visitas") y se entregan igual que los demás.
+
+PANEL (panel.html) — entra con tu sesión de Discord de administrador (ADMIN_DISCORD_IDS):
+  estadísticas, canjes de los últimos 14 días, alertas (códigos masivos por agotarse, códigos por vencer,
+  entregas de más de 24 h, inventario bajo), pendientes de entrega con plantillas de mensaje,
+  inventario "Quedan X" y registro de actividad. No lo compartas.
+
+SERVIDOR (para el generador): POST /api/admin/codes ahora acepta "per" (1–10: veces que la misma persona
+  puede canjear el código). GET /api/admin/stats y /api/admin/log son nuevos. POST /api/admin/claim acepta "at"
+  para distinguir canjes repetidos de la misma persona.
+
+TEMPORADAS: window.CR.tema en assets/config.js. Vista previa en el navegador: agrega a la dirección
+  ?tema=normal  ?tema=newyear  ?nochebuena=1  ?fuegos=1  ?resumen=1   (y ?fsdebug=1 para ver errores en consola).
+  Trineo y villancico ya existían (menú 🎄); ahora el villancico también hace latir las luces en Nochebuena.
+
+PRUEBAS: node herramientas/probar_servidor.mjs   (prueba la lógica del servidor sin Netlify)
+
+
+== MEGA 8: LOGIN + AVISOS ==
+Nuevo: assets/nuevo.js y nuevo.css. Saludo con avatar y botón Salir, botón "Mi entrega" (estado de tus canjes), banner de oferta relámpago con cuenta regresiva, y "Reintentar con otra cuenta" en el login.
+config.js: requireGuild ahora está en true (solo miembros de tu servidor; todos deberán iniciar sesión otra vez una vez).
+Netlify (variable opcional): DISCORD_WEBHOOK_URL = webhook de un canal del staff; avisa cada canje.
+Oferta relámpago (admin, sesión de Discord): POST /api/admin/flash {title,text,items:[],mins:60} · DELETE /api/admin/flash la quita.
+
+== FONDO DE BUCARAMANGA EN EL LOGIN ==
+Pon un video o gif REAL de Bucaramanga en assets/ con uno de estos nombres: bucaramanga.mp4 (recomendado) o bucaramanga.webm.
+Se prueba en ese orden; si no hay ninguno, se ve el banner de siempre. Ideal: 5-15 s en bucle, menos de 5 MB. Ideas de toma: Parque del Agua, Cabecera de noche, Parque García Rovira, Cañón del Chicamocha.
+Nuevo en config.js: proximamente:[{t:"Skin nueva",f:"2026-12-20"}]. Cuenta regresiva a Navidad/Año Nuevo: ya sale sola abajo a la derecha.
+
+SEGURIDAD: /api/redeem bloquea 1 hora a quien falle 10 códigos inválidos. sw.js subió a cr-v12 (cada vez que cambies archivos del sitio, sube este número para que los visitantes vean lo nuevo).
+
+LOGIN NAVIDEÑO: assets/bucaramanga.mp4 ahora muestra una ciudad navideña con pólvora. En el login se quitó el contador de Navidad; se agregaron etiquetas, pasos 1-2-3, contador de canjes y pólvora al hacer clic en cualquier parte. sw.js subió a cr-v13.
+
+ARBOL REALISTA: assets/ultra.js dibuja el arbol (agujas, bolas, guirnaldas, regalos, estrella) y las luces titilan encima. sw.js subio a cr-v14.
+
+
+== MEGA 14: CADA INFORMACIÓN EN SU BOTÓN (index.html; en MEGA 15 también facciones.html) ==
+Nuevos: assets/botones.js y assets/botones.css (enlazados al final de index.html). sw.js subió a cr-v15.
+index.html ahora tiene una barra de botones bajo el encabezado y cada botón muestra SOLO su información:
+  🏠 Inicio       portada, cinta de textos y llamado final
+  🎄 Navidad      cuenta regresiva y árbol, oferta de Navidad, puerta de hoy, combos, eventos y calendario de Adviento
+  🚗 Catálogo     destacados 3D, los más pedidos, categorías y todo el catálogo
+  ⭐ VIP          membresías VIP y comparación
+  ⚔️ Facciones    paquetes de facciones (cada tarjeta lleva a facciones.html)
+  🎫 Cómo comprar pasos de compra
+  💬 Comunidad    Discord
+  ❓ FAQ          preguntas frecuentes
+  📋 Condiciones  condiciones importantes
+- Los enlaces internos (#vip, #faq, #comparar, #comprar…), la barra inferior del celular, los botones de la portada y los
+  enlaces compartidos (?i=ID) abren automáticamente el botón correcto. El botón Atrás del navegador también funciona.
+- El menú viejo del encabezado y el botón ☰ se ocultan porque la nueva barra los reemplaza.
+- Para mover una sección a otro botón: edita la lista RULES al inicio de assets/botones.js (cada línea es: botón, selectores).
+  Las secciones nuevas que otros scripts agreguen heredan el botón de la sección anterior.
+
+
+== MEGA 15: LIMPIEZA, VELOCIDAD Y BOTONES EN FACCIONES ==
+- facciones.html ahora también usa botones: Elegir facción · Ilegal · ELN · Mansión · Ecopetrol · Todas incluyen · Comparar ·
+  Cómo comprar · Comunidad · FAQ · Condiciones. Reemplazan las pestañas viejas Ilegales/Legales (hay un botón por facción).
+  Los enlaces facciones.html#eln, #mansion, #ecopetrol, #facciones, #comparar abren el botón correcto.
+- Sin repetidos: se quitó el botón flotante "🎫 TICKET" viejo, la cuenta regresiva de la esquina (la de la cinta superior y
+  la sección Navidad siguen) y el segundo <script src="assets/config.js"> que se cargaba dos veces.
+  En celular, el botón flotante "Abrir ticket" se oculta porque la barra inferior ya trae Ticket.
+- config.js: ticketUrl ya tiene el canal de tickets de ventas. Lo usan todos los botones de ticket (antes caían a la invitación).
+- VELOCIDAD: cada página carga 1 CSS + 1 JS minificados (assets/index.min.* y assets/facciones.min.*) en vez de 11-12 archivos
+  sueltos. Los archivos originales (mejoras.js, mega.css, etc.) siguen siendo la FUENTE.
+  >>> Si editas cualquier .js/.css de assets/, vuelve a generar los paquetes:  node herramientas/construir.mjs
+      (usa esbuild: la primera vez descarga con npx; o define ESBUILD=/ruta/a/esbuild). Sin eso, tus cambios no se ven en el sitio.
+  Cada script va aislado en try/catch: si uno falla, los demás siguen funcionando.
+  sw.js subió a cr-v16 (ahora precarga los paquetes nuevos).
+- Excepción: assets/config.js sigue separado y editable a mano (no necesita construir).
+
+
+== MEGA 16: MOUSE FLUIDO (menos carga al mover el cursor) ==
+- Las chispas que seguían al mouse ahora vienen APAGADAS (parecían lag). Se activan en el menú 🎄 → "Chispas del mouse".
+- Nieve más liviana: sin resolución retina, ~34 copos (antes 60) y ~24 cuadros por segundo (antes 30).
+- facciones.html: el fondo de ciudad/camino/luna ya no se anima (igual que index.html).
+- El aviso "cargando" oculto ya no gira en segundo plano.
+- El modo automático ligero se activa si el equipo baja de 50 cuadros por segundo (antes 42).
+- Si aún se siente pesado: ⚙️ Ajustes → "Reducir animaciones" o "⚡ Modo ligero".
+- Recuerda: tras editar archivos de assets/, ejecutar  node herramientas/construir.mjs  (sw.js ahora es cr-v17).
+
+
+== ACCESO DE ADMINISTRADOR CON USUARIO Y CONTRASEÑA ==
+NUEVO: admin-login.html (+ cambios en panel.html, login.html, assets/mejoras.js, index.min.js, facciones.min.js,
+netlify/functions/api.mjs y lib/logic.mjs)
+
+CÓMO SE USA
+  - En el catálogo, tras iniciar sesión con Discord, abre tu perfil (tu avatar arriba) y pulsa
+    "⚙️ ADMINISTRADOR". También hay un enlace "Acceso de administrador" en la pantalla de login.
+  - Te lleva a admin-login.html: escribe usuario y contraseña y entras al panel (panel.html).
+  - La sesión dura 12 horas y se cierra con el botón "Cerrar sesión" del panel o al cerrar la pestaña.
+
+CONFIGURAR (Netlify del CATÁLOGO → Site configuration → Environment variables)
+  ADMIN_USER   = tu usuario de administrador
+  ADMIN_PASS   = una contraseña larga y única (no la pongas en ningún archivo ni ZIP)
+  ADMIN_SECRET = (opcional) texto largo aleatorio para firmar las sesiones
+  Después de guardar, haz un nuevo deploy. Comprueba en /api/ping: debe mostrar "login":true.
+
+SEGURIDAD
+  - La contraseña solo se valida en el servidor (comparación segura). Nunca está en el HTML ni en el JS.
+  - Tras 5 intentos fallidos desde la misma conexión, el acceso se bloquea 15 minutos.
+  - La sesión de administrador solo sirve para /api/admin/*; no puede canjear códigos como jugador.
+  - El generador de códigos usa estas mismas variables (ADMIN_USER y ADMIN_PASS): ya no necesita BACKEND_AUTH.js,
+    el servidor del catálogo ya acepta su encabezado Authorization: Basic.
+  - Si ya usas ADMIN_DISCORD_IDS, el panel también sigue funcionando con tu cuenta de Discord.
+
+
+== PANEL DE ADMINISTRACIÓN CON PESTAÑAS SEPARADAS ==
+Cambios: panel.html (pestañas), netlify/functions/lib/logic.mjs (registro de personas + /api/admin/users), sw.js (cr-v22).
+Entrada: perfil (tu avatar) → "⚙️ ADMINISTRADOR" → usuario y contraseña → panel.
+Pestañas del panel:
+  📊 Resumen        registrados, nuevos 7 días, activos, compradores, canjes, gráfica y alertas
+  👥 Registrados    todas las personas que entraron con Discord (buscar, ordenar, exportar CSV)
+  🛍️ Compradores    quienes canjearon algo, con el detalle de cada canje (entregado/pendiente) y CSV
+  📋 Entregas       pendientes de entrega con mensajes listos
+  🎟️ Códigos        lista de códigos con estado y cupos (activo / cerrado)
+  📦 Inventario     "Quedan X"
+  🧾 Actividad      registro de acciones
+Las personas se registran solas la primera vez que inician sesión (desde ahora). Quienes ya canjearon antes aparecen igual como compradores.
+IMPORTANTE: para que el botón aparezca hay que volver a publicar TODO el proyecto en Netlify (con Git) y recargar con Ctrl+F5.
+
+
+== TODO EN UNO: CATÁLOGO + GENERADOR + PANEL (un solo sitio Netlify) ==
+El generador de códigos ya NO es un sitio aparte: vive en /generador/ y se usa desde la pestaña "🎟️ Códigos" del panel.
+Ya no hace falta publicar codigos_generador.zip, ni ALLOWED_ORIGINS, ni un segundo redirect de Discord.
+
+ENTRAR: perfil (tu avatar) → "⚙️ ADMINISTRADOR" → usuario y contraseña → panel con las pestañas
+  📊 Resumen · 👥 Registrados · 🛍️ Compradores · 📋 Entregas · 🎟️ Códigos (generador) · 📦 Inventario · 🧾 Actividad
+
+CONTRASEÑAS (Netlify → Site configuration → Environment variables). NUNCA las escribas en archivos ni en GitHub:
+  ADMIN_USER  = usuario principal
+  ADMIN_PASS  = contraseña del usuario principal
+  ADMIN_EXTRA = (opcional) más administradores:  usuario2:clave2,usuario3:clave3
+Después de guardar → Deploys → Trigger deploy. Para cambiar o crear contraseñas solo editas estas variables y vuelves a desplegar.
+
+NUEVO EN EL SERVIDOR: códigos para todos (cupos / fecha de apertura y cierre), activar/desactivar códigos,
+plantillas de premio, entrega en lote y varios administradores.
+
+
+== CATÁLOGO MEJORADO: "MI PEDIDO" (assets/pedido.js + pedido.css) ==
+- Botón "＋ Pedido" en cada ítem y en la vista ampliada: el cliente elige varios y los envía juntos al ticket (mensaje listo copiado + notas).
+- Botón 🛒 "Mi pedido" flotante con contador (se guarda en el navegador), botón Compartir ítem, contador de resultados.
+- La búsqueda ya ignora tildes (camion = camión). sw.js subió a cr-v28. No necesita construir: son archivos aparte.
+
+
+== LOGIN NUEVO (login.html) ==
+- Paisaje de Bucaramanga dibujado en vivo (no usa video): montañas, ciudad con luces, Catedral de la Sagrada Familia, árbol de Navidad con luces y estrella,
+  farolitos y pólvora (al tocar el cielo se lanza un cohete). Funciona en celular; modo ligero automático y se pausa si la pestaña no se ve.
+- Mismo funcionamiento del login (Discord, errores, "reintentar con otra cuenta", modo prueba en localhost). Ya no carga navidad.css/diseno.css/navidad.js ni el video.
+- El enlace "Acceso de administrador" ahora está oculto: toca 3 veces el logo, o mantenlo pulsado 1 s, o abre login.html?admin. (También sigue en tu perfil del catálogo.)
+- Ayuda "¿Problemas para entrar?" con los errores comunes. sw.js subió a cr-v29. assets/bucaramanga.mp4 ya no se usa (puedes borrarlo).
+
+
+== PANELES DE STAFF POR RANGO (staff.html) ==
+27 rangos, cada uno con su propio usuario y contraseña, desde Creador de contenido (1) hasta Sub fundador (27).
+Entrada: https://TU-CATALOGO.netlify.app/staff.html  (también hay un enlace en admin-login.html)
+NETLIFY: crea la variable STAFF_USERS con el valor del archivo CREDENCIALES_STAFF.txt (formato usuario:clave:rol,usuario2:clave2:rol) y vuelve a publicar.
+  Opcional: STAFF_SECRET = clave larga para firmar las sesiones (dura 10 h). 5 intentos fallidos bloquean la IP 15 minutos.
+Para cambiar una contraseña o agregar personas: edita STAFF_USERS (un rol puede tener varios usuarios: repite el rol_id con otro usuario).
+Cada panel muestra las funciones de su grupo y tiene Reportes, Tareas y Anuncios. Los permisos los valida el servidor:
+  - Rango 11 (Encargado de eventos) y superiores: revisan reportes de rangos inferiores, asignan tareas a rangos inferiores y publican anuncios.
+  - Rango 18 (Supervisor aprendiz) y superiores: además ven el equipo y el registro de actividad.
+Lógica en netlify/functions/lib/staff.mjs (lista ROLES y GROUPS al inicio). Los reportes, tareas y anuncios se guardan en Netlify Blobs.

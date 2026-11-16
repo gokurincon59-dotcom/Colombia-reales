@@ -1,0 +1,57 @@
+/* ===== PULIDO VISUAL (ambas páginas) ===== */
+[id]{scroll-margin-top:96px}
+header{position:sticky;top:0;z-index:60;transition:padding .3s,background .3s,box-shadow .3s}
+header.stuck{padding-top:8px;padding-bottom:8px;background:rgba(8,3,5,.92);box-shadow:0 8px 30px rgba(0,0,0,.55)}
+header .brand img{transition:width .3s,height .3s}header.stuck .brand img{width:46px;height:46px}
+nav a.on{color:#fff}nav a.on:after{right:0}
+/* categorías: 6 en fila, sin huérfanas */
+.cats{grid-template-columns:repeat(6,1fr)!important}
+@media(max-width:1000px){.cats{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:560px){.cats{grid-template-columns:repeat(2,1fr)!important}}
+/* hero: entrada escalonada */
+.hero-inner>*{animation:hin .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-inner>:nth-child(2){animation-delay:.1s}.hero-inner>:nth-child(3){animation-delay:.2s}.hero-inner>:nth-child(4){animation-delay:.3s}.hero-inner>:nth-child(n+5){animation-delay:.4s}
+@keyframes hin{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.cue{display:block;margin:34px auto 0;width:28px;height:46px;border:2px solid rgba(255,255,255,.35);border-radius:16px;position:relative;opacity:.8}
+.cue:after{content:"";position:absolute;left:50%;top:8px;width:4px;height:9px;margin-left:-2px;border-radius:4px;background:var(--acl);animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(16px)}}
+/* brasas flotantes */
+.embers{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.embers i{position:absolute;bottom:-12px;width:4px;height:4px;border-radius:50%;background:#ff7a3d;box-shadow:0 0 8px 2px rgba(255,90,40,.7);opacity:0;animation:emb linear infinite}
+@keyframes emb{0%{transform:translate(0,0) scale(1);opacity:0}10%{opacity:.9}100%{transform:translate(var(--dx),-100vh) scale(.3);opacity:0}}
+/* tarjetas: brillo y tilt */
+.item,.ovc{will-change:auto;transform-style:flat}.embers{display:none!important}
+.item.tilt,.ovc.tilt{transition:transform .08s linear,border-color .25s,box-shadow .25s}
+/* secciones: separador con bandera */
+.sec{position:relative}
+.sec+.sec:before{content:"";display:block;width:min(260px,50%);height:1px;margin:0 auto 64px;background:linear-gradient(90deg,transparent,#FCD116,#003893,#CE1126,transparent);opacity:.55}
+/* footer ampliado */
+.ftg{width:min(1200px,92vw);margin:0 auto 34px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:30px;text-align:left}
+.ftg h5{margin:0 0 12px;font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;font-size:20px;letter-spacing:3px;color:#fff}
+.ftg a{display:block;color:#b9aeb0;text-decoration:none;font-size:13px;padding:4px 0;transition:color .2s,transform .2s}.ftg a:hover{color:var(--acl);transform:translateX(4px)}
+.ftg p{margin:10px 0 0;font-size:13px;color:#9a8c8f;line-height:1.6;max-width:340px}
+.ftg .fb{display:flex;align-items:center;gap:12px}.ftg .fb img{width:54px;height:54px;object-fit:contain;filter:drop-shadow(0 0 10px var(--ac))}.ftg .fb b{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;font-size:28px;letter-spacing:4px}
+.ftg .fbtn{display:inline-block;margin-top:6px;padding:11px 22px;border-radius:40px;background:#5865F2;color:#fff!important;font-family:"Bebas Neue",Impact,sans-serif;font-size:18px;letter-spacing:2px;box-shadow:0 0 22px rgba(88,101,242,.5)}
+.ftg .fbtn:hover{transform:translateY(-2px)!important}
+.ftl{height:1px;width:min(1200px,92vw);margin:0 auto 24px;background:linear-gradient(90deg,transparent,var(--acm),transparent)}
+@media(max-width:800px){.ftg{grid-template-columns:1fr 1fr}.ftg>div:first-child{grid-column:1/-1}}
+@media(max-width:480px){.ftg{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.hero-inner>*,.cue:after,.embers i{animation:none!important}.embers{display:none}}
+.ftg .fb b{white-space:nowrap;color:#fff}
+@media(max-width:800px){header{position:relative}header.stuck{padding-top:22px;padding-bottom:16px}header.stuck .brand img{width:74px;height:74px}}
+@media(max-width:600px){.cat span{font-size:19px!important;line-height:1.05;word-break:normal;overflow-wrap:normal;hyphens:none}.hero-inner .btn{display:block;margin:10px auto}.cue{display:none}}
+
+
+/* COLOMBIA REALS: barra flotante ordenada (v2026-11-15) */
+#ixPw{left:14px!important;bottom:148px!important;z-index:9010!important}
+#crP{left:14px!important;bottom:88px!important;z-index:9011!important}
+#crU{left:14px!important;bottom:14px!important;z-index:9012!important;max-width:min(92vw,360px)}
+#crU span{max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#mgDc{left:auto!important;right:16px!important;bottom:136px!important;z-index:9010!important}
+body:has(#crU) #mgDc{display:none!important}
+@media(max-width:650px){
+  #ixPw{left:12px!important;bottom:148px!important}
+  #crP{left:12px!important;bottom:88px!important}
+  #crU{left:12px!important;bottom:12px!important}
+  #mgDc{left:auto!important;right:12px!important;bottom:136px!important}
+}

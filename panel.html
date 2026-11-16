@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Panel · COLOMBIA REALS</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#090506">
+<link rel="icon" href="assets/logo-cr.webp"><script src="assets/config.js"></script>
+<style>
+:root{--bg:#090506;--p:#140a0d;--l:#3a141b;--r:#e01322;--g:#ffd66b;--m:#b9aeb0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#fff;font:13.5px Poppins,"Segoe UI",Arial,sans-serif;display:flex;min-height:100vh}
+.sb{width:224px;flex:none;background:#0d0608;border-right:1px solid var(--l);position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding:16px 12px;gap:6px}
+.br{display:flex;align-items:center;gap:10px;padding:4px 6px 14px}.br img{width:38px;height:38px;object-fit:contain}.br b{font:22px/1 "Bebas Neue",Impact,sans-serif;letter-spacing:2px}.br b i{color:var(--r);font-style:normal}.br small{display:block;color:var(--g);font-size:9px;letter-spacing:3px}
+nav{display:flex;flex-direction:column;gap:3px;flex:1}nav button{display:flex;align-items:center;gap:10px;text-align:left;background:none;border:0;color:#cdbfc1;padding:10px 12px;border-radius:10px;cursor:pointer;font:600 13px Poppins,Arial,sans-serif}
+nav button:hover{background:rgba(255,255,255,.05)}nav button.on{background:linear-gradient(135deg,#e01322,#8f0b16);color:#fff;box-shadow:0 0 16px rgba(224,19,34,.35)}nav i{margin-left:auto;font-style:normal;font-size:11px;background:rgba(0,0,0,.4);border-radius:10px;padding:1px 7px}
+.sbf{font-size:11px;color:var(--m);border-top:1px solid var(--l);padding-top:12px;display:flex;flex-direction:column;gap:8px}.sbf a{color:var(--g);text-decoration:none}
+main{flex:1;min-width:0;padding:20px 24px 50px;max-width:1180px}
+.tb{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}.tb h1{font:34px "Bebas Neue",Impact,sans-serif;letter-spacing:3px;margin:0;flex:1;min-width:160px}.tb label{font-size:12px;color:var(--m);display:flex;gap:6px;align-items:center}
+button,select,input,textarea{font:600 12.5px Poppins,Arial,sans-serif;color:#fff;background:#1f0d11;border:1px solid #4b171f;border-radius:9px;padding:9px 12px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--r)}button{cursor:pointer}button:hover{filter:brightness(1.25)}
+.ok{background:linear-gradient(135deg,#0b8a3c,#06562a);border-color:#1f6b3a}.rd{background:linear-gradient(135deg,#e01322,#8f0b16);border-color:#ff4550}.dg{background:#3a0d13;border-color:#8a1019}
+input[type=checkbox]{width:auto;padding:0}textarea,input[type=text],input[type=number]{width:100%;background:#12080a}
+#msg{display:none;position:fixed;right:18px;bottom:18px;z-index:50;padding:12px 16px;border-radius:12px;background:#0b3a1c;border:1px solid #1f6b3a;max-width:340px}#msg.on{display:block}#msg.bad{background:#2a0a10;border-color:#8a1019}
+.pane{display:none}.pane.on{display:block}.g{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-bottom:14px}
+.c{background:linear-gradient(145deg,rgba(35,12,16,.96),rgba(14,7,9,.96));border:1px solid var(--l);border-radius:14px;padding:16px}.c.w{grid-column:1/-1}
+h2{font:21px "Bebas Neue",Impact,sans-serif;letter-spacing:2px;color:var(--g);margin:0 0 10px}.m{color:var(--m);font-size:12px}
+.k{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}.k>div{background:var(--p);border:1px solid var(--l);border-radius:12px;padding:12px 14px;border-left:3px solid var(--r)}.k b{display:block;font:30px/1.1 "Bebas Neue",Impact,sans-serif;color:var(--g);letter-spacing:1px}.k small{color:#cdbfc1;font-size:11px}
+.bars{display:flex;align-items:flex-end;gap:5px;height:130px}.bars div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font-size:10px;color:#cdbfc1}.bars i{display:block;width:100%;min-height:2px;border-radius:4px 4px 0 0;background:linear-gradient(#ffd66b,#b3121f)}
+.row{display:flex;gap:8px;align-items:center;padding:9px 11px;margin-bottom:6px;border-radius:10px;background:rgba(255,24,37,.06);border:1px solid #2e1217;font-size:12px;flex-wrap:wrap}.row>.in{flex:1;min-width:180px;word-break:break-word}.row small{display:block;color:var(--m);line-height:1.5}.row code{color:var(--g);font-family:Consolas,monospace}
+.row img,.row .ph{width:38px;height:38px;border-radius:50%;object-fit:cover;background:#2a1216;display:flex;align-items:center;justify-content:center;flex:none}
+.al{padding:9px 12px;border-radius:10px;margin-bottom:6px;font-size:12px;border:1px solid #a66b00;background:rgba(255,160,0,.1)}.al.late,.al.stock{border-color:#8a1019;background:rgba(255,24,37,.1)}
+.tag{display:inline-block;border-radius:20px;padding:2px 9px;font-size:11px;font-weight:600;margin:2px 4px 0 0}.tag.g{background:rgba(11,138,60,.25);color:#7dffa8}.tag.y{background:rgba(255,214,107,.18);color:var(--g)}.tag.r{background:rgba(255,24,37,.18);color:#ff9aa1}.tag.b{background:rgba(88,101,242,.25);color:#b5bcff}
+.f{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.f>*{flex:1;min-width:130px}.f>button{flex:none}details summary{cursor:pointer;color:var(--g);margin-top:4px}
+@media(max-width:860px){body{display:block}.sb{width:auto;height:auto;flex-direction:row;overflow-x:auto;padding:8px;z-index:9;border-right:0;border-bottom:1px solid var(--l)}.br,.sbf{display:none}nav{flex-direction:row}nav button{white-space:nowrap}main{padding:14px 12px 40px}}
+</style></head><body>
+<aside class="sb"><div class="br"><img src="assets/logo-cr.webp" alt=""><div><b>COLOMBIA <i>REALS</i></b><small>ADMINISTRACIÓN</small></div></div>
+<nav id="nv">
+<button data-t="res" class="on">📊 Resumen</button><button data-t="ent">📋 Entregas <i id="n-ent">0</i></button><button data-t="cod">🎟️ Códigos <i id="n-cod">0</i></button><button data-t="per">👥 Personas <i id="n-per">0</i></button><button data-t="inv">📦 Inventario</button><button data-t="ofe">⚡ Ofertas</button><button data-t="act">🧾 Actividad</button><button data-t="sis">⚙️ Sistema</button></nav>
+<div class="sbf"><div id="who">Cargando…</div><div id="ses"></div><button id="out" class="dg" style="display:none">Cerrar sesión</button><a href="./">← Volver al catálogo</a></div></aside>
+<main>
+<div class="tb"><h1 id="pt">Resumen</h1><button id="ckb">🔎 Ctrl+K</button><label><input type="checkbox" id="au"> Auto-actualizar</label><button id="re">↻ Actualizar</button></div>
+<div id="msg"></div>
+
+<section class="pane on" id="p-res"><div class="k" id="kp"></div>
+<div class="g"><div class="c"><h2>Canjes · <select id="rg" style="padding:3px 6px"><option value="14">14 días</option><option value="30">30 días</option><option value="90">90 días</option></select></h2><div class="bars" id="bars"></div></div><div class="c"><h2>Premios más canjeados</h2><div id="tr"></div></div></div>
+<div class="g"><div class="c"><h2>⚠️ Alertas</h2><div id="al"></div></div><div class="c"><h2>Última actividad</h2><div id="rc"></div></div></div></section>
+
+<section class="pane" id="p-ent"><div class="c"><div class="f"><input id="q-ent" type="text" placeholder="Buscar jugador, código o premio…"><select id="m-ent"><option value="p">Pendientes</option><option value="d">Entregadas</option></select><select id="tp"></select><button id="te">✏️ Plantilla</button></div>
+<div id="te-box" style="display:none"><textarea id="tt" rows="3"></textarea><div class="m">Variables: {usuario} {premio} {codigo} {id}</div><div class="f"><button id="tsv" class="ok">Guardar plantilla</button></div></div>
+<div class="f"><label class="m"><input type="checkbox" id="ea"> Seleccionar todo</label><button id="eb" class="ok">✔ Entregar seleccionados (0)</button><button id="csv-ent">⬇ CSV</button></div><div id="l-ent"></div></div></section>
+
+<section class="pane" id="p-cod"><div id="cv"><div class="c"><div class="f"><input id="q-cod" type="text" placeholder="Buscar código, premio o lote…"><select id="f-cod"><option value="">Todos</option><option value="on">Activos</option><option value="full">Agotados</option><option value="exp">Vencidos</option><option value="off">Desactivados</option><option value="com">Para todos</option><option value="per">Personales</option></select><button id="gn" class="rd">＋ Nuevo código</button><button id="csv-cod">⬇ CSV</button></div><div id="l-cod"></div></div></div>
+<div id="gw" style="display:none"><div class="f"><button id="gb">← Volver a la lista</button></div><div class="c" style="padding:0;overflow:hidden"><iframe id="gen" title="Generador" data-src="generador/?embed=1" style="width:100%;height:calc(100vh - 150px);min-height:620px;border:0;background:#090506"></iframe></div></div></section>
+
+<section class="pane" id="p-per"><div class="c"><div class="f"><input id="q-per" type="text" placeholder="Buscar por nombre o ID de Discord…"><select id="f-per"><option value="">Todos</option><option value="b">Compradores</option><option value="s">Solo registrados</option><option value="p">Con pendientes</option><option value="x">Bloqueados</option></select><select id="o-per"><option value="first">Más recientes</option><option value="last">Última visita</option><option value="days">Más visitas</option><option value="claims">Más canjes</option><option value="name">Nombre A-Z</option></select><button id="csv-per">⬇ CSV</button></div><div id="l-per"></div></div></section>
+
+<section class="pane" id="p-inv"><div class="c"><div class="f"><input id="q-inv" type="text" placeholder="Buscar ítem…"><select id="sn"></select><input id="sv" type="number" min="0" max="9999" placeholder="Cantidad"><button id="ss" class="ok">Guardar</button></div><div class="m" style="margin-bottom:8px">Sin cantidad no muestra etiqueta. Con 0 aparece como AGOTADO.</div><div id="sl"></div></div></section>
+
+<section class="pane" id="p-ofe"><div class="g"><div class="c"><h2>⚡ Nueva oferta relámpago</h2><div class="f"><input id="fo-t" type="text" maxlength="60" placeholder="Título (ej: Oferta de Navidad)"></div><div class="f"><input id="fo-x" type="text" maxlength="160" placeholder="Texto corto de la oferta"></div><div class="f"><input id="fo-i" type="text" placeholder="Ítems (números separados por coma)"><input id="fo-m" type="number" min="5" max="720" value="60" title="Minutos"></div><div class="f"><button id="fo-go" class="rd">Lanzar oferta</button><button id="fo-rm" class="dg">Quitar oferta activa</button></div><div class="m">Duración en minutos (5 a 720). Se muestra como banner con cuenta regresiva en el catálogo.</div></div><div class="c"><h2>Oferta activa</h2><div id="fo-cur"></div></div></div></section>
+
+<section class="pane" id="p-act"><div class="c"><div class="f"><input id="q-act" type="text" placeholder="Buscar en la actividad…"><select id="f-act"></select><button id="csv-act">⬇ CSV</button></div><div id="l-act"></div></div></section>
+
+<section class="pane" id="p-sis"><div class="g"><div class="c"><h2>Estado del servidor</h2><div id="sy"></div></div><div class="c"><h2>Sesión y acceso</h2><div id="ss2"></div><div class="f"><button id="bk" class="ok">⬇ Copia de seguridad (JSON)</button></div><div class="m" style="margin-top:8px">Usuarios, contraseñas y premios automáticos se cambian en Netlify → Environment variables (ADMIN_USER, ADMIN_PASS, ADMIN_EXTRA, DAILY_*, SPIN_*, STREAK_*) y luego un nuevo deploy.</div></div></div></section>
+</main>
+<div id="ck" style="display:none;position:fixed;inset:0;background:#000b;z-index:60;padding:12vh 16px"><div class="c" style="max-width:560px;margin:auto"><input id="ci" type="text" placeholder="Buscar sección, jugador o código…  (Esc cierra)"><div id="cr" style="margin-top:8px"></div></div></div>
+<script>
+const TITLES={"4":"Porsche 911 GT3 RS","5":"McLaren 765LT","6":"Mercedes-AMG GLC Coupé","7":"Mercedes-AMG G63","8":"Audi R8","9":"Ferrari LaFerrari","10":"Ferrari 488 Pista Spider","11":"Hummer H2 Limusina","12":"Chevrolet Corvette","14":"Lamborghini Urus","15":"Lamborghini Aventador SVJ","16":"Cadillac Escalade V","17":"Chevrolet Camaro ZL1","18":"Rolls-Royce Cullinan","20":"Mercedes-AMG G63 edición limitada","21":"Vehículos nuevos","22":"Bugatti Bolide","24":"Kawasaki Ninja H2","25":"BMW R 1250 GS Adventure","26":"Ducati Multistrada","28":"VIP de Todito","29":"VIP Choclitos","31":"Catálogo de skins","32":"Más skins disponibles","34":"Creaciones personalizadas","36":"Tienda extra","37":"Más artículos de tienda","38":"Condiciones importantes","39":"Cómo comprar"};
+(()=>{'use strict';
+const $=s=>document.querySelector(s),C=window.CR||{},D={codes:[],users:[],stock:{},log:[],pend:[],done:[],view:[]};
+const esc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const adm=()=>{try{const s=JSON.parse(sessionStorage.getItem('cr_admin')||'null');return s&&s.t&&s.e>Date.now()?s:null}catch(e){return null}};
+const tok=()=>{const a=adm();if(a)return a.t;try{const t=JSON.parse(localStorage.getItem('cr_sess')||'null');return t&&t.e>Date.now()?t.t:''}catch(e){return ''}};
+const toLogin=e=>{try{sessionStorage.removeItem('cr_admin')}catch(x){}location.replace('admin-login.html'+(e?'?e='+e:''))};
+const toast=(m,bad)=>{const b=$('#msg');b.textContent=m;b.className=bad?'on bad':'on';clearTimeout(toast.t);toast.t=setTimeout(()=>b.className='',bad?6000:2200)};
+async function api(p,o){const r=await fetch((C.apiUrl||'')+'/api'+p,{...o,headers:{'content-type':'application/json',Authorization:'Bearer '+tok()}});let d={};try{d=await r.json()}catch(e){}if(r.status===401&&adm()){toLogin('expired');throw new Error('Tu sesión de administrador terminó.')}if(!r.ok)throw new Error(d.error||'Error '+r.status);return d}
+const post=(p,b)=>api(p,{method:'POST',body:JSON.stringify(b)});
+const fmt=t=>t?new Date(t).toLocaleString('es-CO',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}):'—',day=t=>t?new Date(t).toLocaleDateString('es-CO',{day:'2-digit',month:'short',year:'numeric'}):'—';
+const csv=(n,rows)=>{const b=new Blob(['\ufeff'+rows.map(r=>r.map(v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"').join(',')).join('\n')],{type:'text/csv'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=n;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)};
+const DEF=[{n:'Entrega',t:'¡Hola {usuario}! 🎁 Tu premio "{premio}" (código {codigo}) ya fue entregado. ¡Gracias por ser parte de Colombia Reals!'},{n:'Pendiente',t:'Hola {usuario}, recibimos tu canje de "{premio}" (código {codigo}). Lo entregamos en breve, gracias por tu paciencia 🙌'},{n:'Pide datos',t:'Hola {usuario}, para entregar "{premio}" (código {codigo}) necesitamos tu ID del juego. ¿Nos lo compartes por aquí?'}];
+let TP;try{TP=JSON.parse(localStorage.getItem('cr_tpl')||'null')}catch(e){}if(!Array.isArray(TP)||!TP.length)TP=DEF;
+const fill=(t,x)=>t.replace(/\{usuario\}/g,x.name).replace(/\{premio\}/g,x.reward).replace(/\{codigo\}/g,x.code).replace(/\{id\}/g,x.uid);
+const paintTp=()=>{$('#tp').innerHTML=TP.map((x,i)=>`<option value="${i}">${esc(x.n)}</option>`).join('');$('#tt').value=TP[+$('#tp').value||0].t};
+const rw=c=>c.kind==='discount'?c.value+'% de descuento':c.prize;
+const expd=c=>c.exp&&new Date(c.exp+'T23:59:59-05:00')<new Date(),fl=c=>c.max>0&&c.claims.length>=c.max,en=c=>c.endAt&&Date.now()>=c.endAt;
+const stt=c=>c.active===false?'off':expd(c)||en(c)?'exp':fl(c)?'full':c.startAt&&Date.now()<c.startAt?'soon':'on';
+const SL={on:['Activo','g'],off:['Desactivado','r'],exp:['Vencido','r'],full:['Agotado','y'],soon:['Próximo','b']};
+const av=u=>u.avatar?`<img src="${esc(u.avatar)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:'<div class="ph">👤</div>';
+const has=(q,...a)=>!q||a.some(v=>String(v==null?'':v).toLowerCase().includes(q));
+const val=id=>$(id).value.trim().toLowerCase();
+
+/* ---------- Pintado ---------- */
+function pBars(){const n=+$('#rg').value,d0=Date.now()-5*3600e3,m={};for(let i=n-1;i>=0;i--)m[new Date(d0-i*864e5).toISOString().slice(0,10)]=0;
+  for(const c of D.codes)for(const x of c.claims){const k=new Date(x.at-5*3600e3).toISOString().slice(0,10);if(k in m)m[k]++}
+  const a=Object.entries(m),mx=Math.max(1,...a.map(v=>v[1]));
+  $('#bars').innerHTML=a.map(([d,v])=>`<div title="${d}: ${v}"><span>${n>30?'':v||''}</span><i style="height:${v/mx*92}px"></i><span>${n>14?'':d.slice(8)}</span></div>`).join('')}
+function pRes(st,ut){
+  const t=st.totals;
+  $('#kp').innerHTML=[['Registrados',ut.registered],['Nuevos 7 días',ut.new7],['Activos 7 días',ut.active7],['Compradores',ut.buyers],['Códigos',t.codes],['Códigos activos',t.active],['Canjes',t.claims],['Entregados',t.delivered],['Pendientes',t.pending],['+24 h sin entregar',t.late]].map(([l,v])=>`<div><b>${v}</b><small>${l}</small></div>`).join('');
+  pBars();
+  $('#tr').innerHTML=st.topRewards.map(x=>`<div class="row"><span class="in">${esc(x.r)}</span><b>${x.n}</b></div>`).join('')||'<div class="m">Aún no hay canjes.</div>';
+  $('#al').innerHTML=st.alerts.map(a=>a.type==='low'?`<div class="al">⚠️ <b>${esc(a.code)}</b> (${esc(a.reward)}) se agota: quedan ${a.left} de ${a.max}</div>`:a.type==='soon'?`<div class="al">⏰ <b>${esc(a.code)}</b> (${esc(a.reward)}) vence el ${esc(a.exp)} y quedan ${a.left} cupos</div>`:a.type==='late'?`<div class="al late">📬 ${a.count} canje(s) llevan más de 24 h sin entregar</div>`:`<div class="al stock">📦 ${esc(TITLES[a.n]||'Ítem '+a.n)} tiene ${a.left} en inventario</div>`).join('')||'<div class="m">Todo en orden ✅</div>';
+  $('#rc').innerHTML=D.log.slice(0,6).map(x=>`<div class="row"><small>${fmt(x.t)}</small><span class="in"><b>${esc(x.by)}</b> · ${esc(x.act)} · ${esc(x.info)}</span></div>`).join('')||'<div class="m">Sin actividad.</div>';
+}
+function pEnt(){
+  const q=val('#q-ent'),m=$('#m-ent').value,src=m==='p'?D.pend:D.done;
+  D.view=src.filter(x=>has(q,x.name,x.code,x.reward,x.uid));
+  $('#l-ent').innerHTML=D.view.map((x,i)=>`<div class="row"><input type="checkbox" data-k="${i}" ${m==='p'?'':'disabled'}><span class="in"><b>${esc(x.name)}</b> · ${esc(x.reward)} · <code>${esc(x.code)}</code><small>${fmt(x.at)}${x.dat?' · entregado '+fmt(x.dat)+(x.by?' por '+esc(x.by):''):''}</small></span><button data-a="cp" data-i="${i}">📋 Mensaje</button>${m==='p'?`<button class="ok" data-a="dv" data-i="${i}">✔ Entregado</button>`:`<button data-a="ud" data-i="${i}">↩ Desmarcar</button>`}</div>`).join('')||`<div class="m">${m==='p'?'No hay entregas pendientes 🎉':'Aún no hay entregas.'}</div>`;
+  cnt();
+}
+const sel=()=>[...document.querySelectorAll('#l-ent input[data-k]:checked')].map(c=>D.view[+c.dataset.k]);
+const cnt=()=>{$('#eb').textContent='✔ Entregar seleccionados ('+sel().length+')';$('#eb').style.display=$('#m-ent').value==='p'?'':'none';$('#ea').parentNode.style.display=$('#m-ent').value==='p'?'':'none'};
+function cFilter(){
+  const q=val('#q-cod'),f=$('#f-cod').value;
+  return D.codes.filter(c=>has(q,c.code,rw(c),c.lot,c.desc)&&(!f||(f==='com'?c.community:f==='per'?(c.users||[]).length:stt(c)===f)));
+}
+function pCod(){
+  const a=cFilter();
+  $('#l-cod').innerHTML=a.slice(0,200).map(c=>{const s=SL[stt(c)];return `<div class="row"><span class="in"><code>${esc(c.code)}</code> <span class="tag ${s[1]}">${s[0]}</span>${c.community?'<span class="tag b">Para todos</span>':''}${(c.users||[]).length?'<span class="tag y">Personal</span>':''}<br>${esc(rw(c))}${c.lot?' · lote '+esc(c.lot):''}<small>Usos ${c.claims.length}${c.max?'/'+c.max:''}${c.exp?' · vence '+esc(c.exp):''} · creado ${day(c.createdAt)} por ${esc(c.createdBy&&c.createdBy.name)}</small>${c.claims.length?`<details><summary>Ver canjes</summary>${c.claims.map(x=>`<small>${x.delivered?'✅':'⏳'} ${esc(x.name)} · ${fmt(x.at)}</small>`).join('')}</details>`:''}</span><button data-a="cc" data-c="${esc(c.code)}">📋</button><button data-a="tg" data-c="${esc(c.code)}" data-o="${c.active===false?1:0}">${c.active===false?'Activar':'Pausar'}</button><button class="dg" data-a="dl" data-c="${esc(c.code)}">🗑</button></div>`}).join('')||'<div class="m">No hay códigos con ese filtro.</div>';
+  if(a.length>200)$('#l-cod').insertAdjacentHTML('beforeend','<div class="m">Mostrando 200 de '+a.length+'. Usa el buscador para acotar.</div>');
+}
+const pFilter=()=>{const q=val('#q-per'),f=$('#f-per').value,o=$('#o-per').value;
+  return D.users.filter(u=>has(q,u.name,u.id)&&(!f||(f==='b'?u.claims:f==='s'?!u.claims:f==='x'?u.banned:u.pending))).sort((x,y)=>o==='name'?(x.name||'').localeCompare(y.name||''):(y[o]||0)-(x[o]||0))};
+function pPer(){
+  $('#l-per').innerHTML=pFilter().slice(0,300).map(u=>`<div class="row">${av(u)}<span class="in"><b>${esc(u.name)}</b>${u.claims?`<span class="tag b">${u.claims} canje(s)</span><span class="tag g">${u.delivered} entregado(s)</span>`:'<span class="tag y">Solo registrado</span>'}${u.pending?`<span class="tag r">${u.pending} pendiente(s)</span>`:''}${u.banned?`<span class="tag r">⛔ Bloqueado${u.banReason?': '+esc(u.banReason):''}</span>`:''}${u.note?`<small>📝 ${esc(u.note)}</small>`:''}<small>ID: ${esc(u.id)} · Registro ${day(u.first)} · Última visita ${fmt(u.last)} · ${u.days} día(s)</small>${u.claims?`<details><summary>Ver lo que ha canjeado</summary>${u.items.map(i=>`<small>${i.delivered?'✅':'⏳'} ${esc(i.reward)} · <code>${esc(i.code)}</code> · ${fmt(i.at)}</small>`).join('')}</details>`:''}</span><button data-a="cu" data-c="${esc(u.id)}">📋 ID</button><button data-a="nt" data-c="${esc(u.id)}">📝 Nota</button><button class="${u.banned?'ok':'dg'}" data-a="bn" data-c="${esc(u.id)}" data-o="${u.banned?0:1}">${u.banned?'Desbloquear':'Bloquear'}</button></div>`).join('')||'<div class="m">No hay personas que coincidan.</div>';
+}
+function pInv(){
+  const q=val('#q-inv');
+  $('#sn').innerHTML=Object.entries(TITLES).map(([n,x])=>`<option value="${n}">${esc(x)}</option>`).join('');
+  $('#sl').innerHTML=Object.entries(TITLES).filter(([n,x])=>has(q,x,n)).map(([n,x])=>{const v=D.stock[n];return `<div class="row"><span class="in">${esc(x)} <small>#${n}</small></span><span class="tag ${v==null?'y':v===0?'r':v<=2?'y':'g'}">${v==null?'Sin límite':v===0?'AGOTADO':'Quedan '+v}</span><button data-a="sd" data-n="${n}" data-d="-1">−1</button><button data-a="sd" data-n="${n}" data-d="1">+1</button>${v==null?'':`<button class="dg" data-a="sx" data-n="${n}">Quitar</button>`}</span></div>`}).join('');
+}
+function pOfe(f){
+  $('#fo-cur').innerHTML=f&&f.end>Date.now()?`<div class="row"><span class="in"><b>${esc(f.title)}</b><br>${esc(f.text)}<small>Termina ${fmt(f.end)} · quedan ${Math.max(1,Math.round((f.end-Date.now())/60000))} min${(f.items||[]).length?' · ítems '+f.items.join(', '):''}</small></span></div>`:'<div class="m">No hay ninguna oferta activa.</div>';
+}
+function pAct(){
+  const q=val('#q-act'),f=$('#f-act').value,a=D.log.filter(x=>(!f||x.act===f)&&has(q,x.by,x.act,x.info));
+  $('#l-act').innerHTML=a.map(x=>`<div class="row"><small>${fmt(x.t)}</small><span class="in"><b>${esc(x.by)}</b> · <span class="tag y">${esc(x.act)}</span> ${esc(x.info)}</span></div>`).join('')||'<div class="m">Sin resultados.</div>';
+}
+function pSis(pg){
+  const on=(l,v)=>`<div class="row"><span class="in">${l}</span><span class="tag ${v?'g':'r'}">${v?'Activo':'Apagado'}</span></div>`;
+  $('#sy').innerHTML=on('Servidor /api',pg.ok)+on('Login con usuario y contraseña',pg.login)+on('Código del día',pg.daily)+on('Ruleta diaria',pg.spin)+on('Racha de visitas',pg.streak);
+}
+const sesTxt=()=>{const a=adm();return a?'Sesión de administrador: '+Math.max(0,Math.round((a.e-Date.now())/60000))+' min restantes':'Sesión de Discord'};
+const tick=()=>{$('#ses').textContent=sesTxt();$('#ss2').innerHTML=`<div class="row"><span class="in">${esc(sesTxt())}</span></div><div class="row"><span class="in">Dominio: ${esc(location.host)}</span></div>`};
+
+/* ---------- Carga ---------- */
+async function load(){
+  if(!tok()){toLogin();return}
+  let me;try{me=await api('/admin/me')}catch(e){toast(e.message,1);$('#who').textContent='Sin permiso';return}
+  $('#who').textContent='👤 '+me.user.name;
+  const [st,cd,lg,sk,us,fl,pg]=await Promise.all([api('/admin/stats'),api('/admin/codes'),api('/admin/log'),api('/stock'),api('/admin/users'),api('/flash'),api('/ping')]);
+  D.codes=cd.codes.concat(cd.community||[]).sort((a,b)=>b.createdAt-a.createdAt);D.users=us.users;D.stock=sk.stock||{};D.log=lg.log;
+  D.pend=[];D.done=[];
+  for(const c of D.codes)for(const x of c.claims){const o={code:c.code,reward:rw(c),name:x.name,uid:x.uid,at:x.at,dat:x.dat,by:x.by};(x.delivered?D.done:D.pend).push(o)}
+  D.pend.sort((a,b)=>a.at-b.at);D.done.sort((a,b)=>(b.dat||b.at)-(a.dat||a.at));
+  $('#n-ent').textContent=D.pend.length;$('#n-cod').textContent=D.codes.length;$('#n-per').textContent=us.totals.registered;
+  const acts=[...new Set(D.log.map(x=>x.act))].sort();$('#f-act').innerHTML='<option value="">Todas las acciones</option>'+acts.map(a=>`<option>${esc(a)}</option>`).join('');
+  pRes(st,us.totals);pEnt();pCod();pPer();pInv();pOfe(fl.flash);pAct();pSis(pg);tick();
+}
+const run=f=>async(...a)=>{try{await f(...a)}catch(e){toast(e.message,1)}};
+const reload=()=>load().catch(e=>toast(e.message,1));
+
+/* ---------- Eventos ---------- */
+const TT={res:'Resumen',ent:'Entregas',cod:'Códigos',per:'Personas',inv:'Inventario',ofe:'Ofertas relámpago',act:'Actividad',sis:'Sistema'};
+$('#nv').addEventListener('click',e=>{const b=e.target.closest('button[data-t]');if(!b)return;document.querySelectorAll('#nv button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.pane').forEach(x=>x.classList.toggle('on',x.id==='p-'+b.dataset.t));$('#pt').textContent=TT[b.dataset.t];try{history.replaceState(null,'','#'+b.dataset.t)}catch(_){}});
+const goH=()=>{const b=document.querySelector('#nv button[data-t="'+location.hash.slice(1)+'"]');if(b)b.click()};goH();addEventListener('hashchange',goH);
+[['q-ent',pEnt],['m-ent',pEnt],['q-cod',pCod],['f-cod',pCod],['q-per',pPer],['f-per',pPer],['o-per',pPer],['q-inv',pInv],['q-act',pAct],['f-act',pAct]].forEach(([i,f])=>$('#'+i).addEventListener('input',f));
+$('#l-ent').addEventListener('change',cnt);$('#ea').onchange=()=>{document.querySelectorAll('#l-ent input[data-k]').forEach(c=>c.checked=$('#ea').checked);cnt()};
+$('#te').onclick=()=>{const b=$('#te-box');b.style.display=b.style.display==='none'?'block':'none';$('#tt').value=TP[+$('#tp').value].t};
+$('#tp').onchange=()=>$('#tt').value=TP[+$('#tp').value].t;
+$('#tsv').onclick=()=>{TP[+$('#tp').value].t=$('#tt').value;localStorage.setItem('cr_tpl',JSON.stringify(TP));toast('✔ Plantilla guardada en este navegador')};
+$('#eb').onclick=run(async()=>{const s=sel();if(!s.length)return toast('Selecciona al menos una entrega.',1);await post('/admin/claim',{items:s.map(x=>({code:x.code,uid:x.uid}))});toast('✔ '+s.length+' entrega(s) marcadas');await load()});
+$('#gn').onclick=()=>{$('#cv').style.display='none';$('#gw').style.display='block';const f=$('#gen');if(!f.src)f.src=f.dataset.src};
+$('#gb').onclick=()=>{$('#gw').style.display='none';$('#cv').style.display='block';reload()};
+$('#ss').onclick=run(async()=>{await post('/admin/stock',{n:+$('#sn').value,left:$('#sv').value});$('#sv').value='';await load()});
+$('#fo-go').onclick=run(async()=>{const items=$('#fo-i').value.split(/[\s,;]+/).map(Number).filter(n=>n>0);await post('/admin/flash',{title:$('#fo-t').value,text:$('#fo-x').value,items,mins:+$('#fo-m').value||60});toast('⚡ Oferta lanzada');await load()});
+$('#fo-rm').onclick=run(async()=>{await api('/admin/flash',{method:'DELETE'});toast('Oferta quitada');await load()});
+$('#csv-ent').onclick=()=>csv('entregas.csv',[['Jugador','ID Discord','Premio','Código','Fecha','Entregado']].concat(D.view.map(x=>[x.name,x.uid,x.reward,x.code,new Date(x.at).toISOString(),x.dat?new Date(x.dat).toISOString():''])));
+$('#csv-cod').onclick=()=>csv('codigos.csv',[['Código','Premio','Lote','Estado','Usos','Cupos','Vence']].concat(cFilter().map(c=>[c.code,rw(c),c.lot,SL[stt(c)][0],c.claims.length,c.max,c.exp])));
+$('#csv-per').onclick=()=>csv('personas.csv',[['Nombre','ID Discord','Registro','Última visita','Días','Canjes','Entregados','Pendientes']].concat(pFilter().map(u=>[u.name,u.id,new Date(u.first).toISOString(),new Date(u.last).toISOString(),u.days,u.claims,u.delivered,u.pending])));
+$('#csv-act').onclick=()=>csv('actividad.csv',[['Fecha','Por','Acción','Detalle']].concat(D.log.map(x=>[new Date(x.t).toISOString(),x.by,x.act,x.info])));
+document.addEventListener('click',run(async e=>{
+  const b=e.target.closest('button[data-a]');if(!b)return;const a=b.dataset.a,x=D.view[+b.dataset.i],cp=t=>navigator.clipboard.writeText(t).then(()=>toast('📋 Copiado'));
+  if(a==='cp')cp(fill(TP[+$('#tp').value].t,x));
+  else if(a==='dv'||a==='ud'){await post('/admin/claim',{code:x.code,uid:x.uid,at:x.at,action:a==='dv'?'deliver':'undeliver'});await load()}
+  else if(a==='cc'||a==='cu')cp(b.dataset.c);
+  else if(a==='nt'){const u=D.users.find(v=>v.id===b.dataset.c),n=prompt('Nota interna sobre '+u.name+' (vacío para borrarla):',u.note||'');if(n===null)return;await post('/admin/note',{id:u.id,note:n});await load()}
+  else if(a==='bn'){const blk=b.dataset.o==='1',r=blk?prompt('Motivo del bloqueo (opcional):',''):'';if(blk&&r===null)return;await post('/admin/ban',{id:b.dataset.c,banned:blk,reason:r});toast(blk?'⛔ Jugador bloqueado':'✔ Jugador desbloqueado');await load()}
+  else if(a==='tg'){await post('/admin/toggle',{code:b.dataset.c,active:b.dataset.o==='1'});await load()}
+  else if(a==='dl'){if(!confirm('¿Borrar el código '+b.dataset.c+'? Esta acción no se puede deshacer.'))return;await api('/admin/codes?code='+encodeURIComponent(b.dataset.c),{method:'DELETE'});toast('Código borrado');await load()}
+  else if(a==='sd'||a==='sx'){await post('/admin/stock',a==='sx'?{n:+b.dataset.n,left:''}:{n:+b.dataset.n,delta:+b.dataset.d});await load()}
+}));
+$('#re').onclick=reload;$('#rg').onchange=pBars;
+$('#bk').onclick=()=>{const b=new Blob([JSON.stringify({fecha:new Date().toISOString(),codigos:D.codes,personas:D.users,inventario:D.stock,actividad:D.log},null,1)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='copia-colombia-reals-'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)};
+const ck=$('#ck'),ci=$('#ci');let hits=[];
+const go=h=>{ck.style.display='none';if(h.t==='s')document.querySelector('#nv button[data-t="'+h.k+'"]').click();else{document.querySelector('#nv button[data-t="'+(h.t==='u'?'per':'cod')+'"]').click();const i=$(h.t==='u'?'#q-per':'#q-cod');i.value=h.k;i.dispatchEvent(new Event('input'))}};
+const paintCk=()=>{const q=ci.value.trim().toLowerCase();hits=[...Object.entries(TT).map(([k,v])=>({t:'s',k,l:'📂 '+v})),...D.users.map(u=>({t:'u',k:u.id,l:'👤 '+u.name+' · '+u.id})),...D.codes.map(c=>({t:'c',k:c.code,l:'🎟️ '+c.code+' · '+rw(c)}))].filter(h=>!q||h.l.toLowerCase().includes(q)).slice(0,8);
+  $('#cr').innerHTML=hits.map((h,i)=>`<div class="row" data-h="${i}" style="cursor:pointer">${esc(h.l)}</div>`).join('')||'<div class="m">Sin resultados.</div>'};
+const openCk=()=>{ck.style.display='block';ci.value='';paintCk();ci.focus()};
+ci.oninput=paintCk;$('#cr').onclick=e=>{const r=e.target.closest('[data-h]');if(r)go(hits[+r.dataset.h])};$('#ckb').onclick=openCk;ck.onclick=e=>{if(e.target===ck)ck.style.display='none'};
+addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();ck.style.display==='block'?ck.style.display='none':openCk()}else if(e.key==='Escape')ck.style.display='none';else if(e.key==='Enter'&&ck.style.display==='block'&&hits[0])go(hits[0])});
+let iv;$('#au').onchange=()=>{clearInterval(iv);if($('#au').checked)iv=setInterval(()=>{if(!document.hidden)reload()},60000)};
+if(adm()){$('#out').style.display='block';$('#out').onclick=()=>toLogin()}
+setInterval(tick,30000);paintTp();reload();
+})();
+</script></body></html>

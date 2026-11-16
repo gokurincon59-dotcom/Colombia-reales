@@ -1,0 +1,30 @@
+/* Colombia Reals PRO: centro de cuenta, notificaciones, tickets, seguimiento, actividad, logros, modo claro */
+html.cr-light{filter:invert(1) hue-rotate(180deg)}
+html.cr-light img,html.cr-light video,html.cr-light canvas,html.cr-light .crx-tree,html.cr-light #loader img{filter:invert(1) hue-rotate(180deg)}
+.crpro-bell{position:relative;background:#180b0e;border:1px solid #63202a;color:#fff;border-radius:10px;padding:8px 11px;cursor:pointer;font-size:15px;margin-left:8px}
+.crpro-bell b{position:absolute;top:-6px;right:-6px;min-width:18px;height:18px;border-radius:9px;background:#ff1825;color:#fff;font-size:11px;line-height:18px;text-align:center;display:none}
+.crpro-bell.has b{display:block}
+.crpro-ov{position:fixed;inset:0;z-index:2147483100;background:rgba(0,0,0,.86);display:flex;align-items:center;justify-content:center;padding:14px;opacity:0;transition:opacity .15s;backdrop-filter:blur(6px)}
+.crpro-ov.on{opacity:1}
+.crpro-box{position:relative;width:min(680px,96vw);max-height:90vh;overflow:auto;background:linear-gradient(160deg,#1a0b0f,#0b0507);border:1px solid #5a1b24;border-radius:18px;padding:22px 20px;color:#f4eaec;box-shadow:0 20px 60px #000a}
+.crpro-box h2{margin:0 0 4px;font-size:22px}.crpro-box h3{margin:18px 0 8px;font-size:15px;color:#ff9da4}
+.crpro-x{position:absolute;top:10px;right:12px;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+.crpro-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 16px}
+.crpro-tabs button,.crpro-btn{background:#180b0e;border:1px solid #63202a;color:#fff;border-radius:10px;padding:9px 12px;cursor:pointer;font-weight:600;font-size:13px}
+.crpro-tabs button.on,.crpro-btn.p{background:#94101d;border-color:#ff4652}
+.crpro-muted{color:#b9aeb0;font-size:13px}
+.crpro-list{display:flex;flex-direction:column;gap:8px}
+.crpro-it{background:#12080b;border:1px solid #3a141b;border-radius:12px;padding:11px 13px;display:flex;gap:10px;align-items:flex-start;justify-content:space-between}
+.crpro-it.unread{border-color:#ff4652;background:#1d0a0f}.crpro-it small{display:block;color:#b9aeb0;margin-top:2px}
+.crpro-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.crpro-st{background:#12080b;border:1px solid #3a141b;border-radius:12px;padding:12px;text-align:center}.crpro-st b{display:block;font-size:24px;color:#ffd66b}
+.crpro-tl{list-style:none;margin:10px 0 0;padding:0;display:flex;gap:6px}
+.crpro-tl li{flex:1;text-align:center;font-size:11px;color:#8c7f82;border-top:4px solid #3a141b;padding-top:6px}
+.crpro-tl li.ok{color:#7dffa8;border-color:#22d36a}.crpro-tl li.warn{color:#ffd66b;border-color:#ff9d2e}
+.crpro-f{display:flex;flex-direction:column;gap:9px}.crpro-f input,.crpro-f select,.crpro-f textarea{background:#0e0608;border:1px solid #63202a;color:#fff;border-radius:10px;padding:10px;font:inherit}
+.crpro-f textarea{min-height:100px;resize:vertical}
+.crpro-bars{display:flex;gap:6px;align-items:flex-end;height:80px;margin-top:8px}.crpro-bars i{flex:1;background:#94101d;border-radius:4px 4px 0 0;min-height:3px;position:relative}
+.crpro-bars i.z{background:#3a141b}.crpro-bars span{position:absolute;bottom:-17px;left:0;right:0;text-align:center;font-size:10px;color:#8c7f82;font-style:normal}
+.crpro-ach{opacity:.55}.crpro-ach.ok{opacity:1;border-color:#ffd66b}
+.crpro-bar{height:6px;background:#3a141b;border-radius:3px;margin-top:6px;overflow:hidden}.crpro-bar i{display:block;height:100%;background:#ffd66b}
+@media(max-width:560px){.crpro-box{padding:18px 14px}.crpro-it{flex-direction:column}}

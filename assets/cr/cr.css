@@ -1,0 +1,31 @@
+/* Colombia Reals Plus · estilos. Variables: cambian con data-crt="dark|light" */
+:root{--cr-bg:#0d1017;--cr-card:#161b26;--cr-tx:#eef1f7;--cr-mut:#8d97ab;--cr-ac:#f5c242;--cr-ok:#3ecf8e;--cr-bd:#262d3d}
+[data-crt=light]{--cr-bg:#f6f7fb;--cr-card:#fff;--cr-tx:#151a24;--cr-mut:#5d6677;--cr-ac:#c98a00;--cr-bd:#dde1ea}
+[data-crt=light] body{background:#f3f4f8;color:#151a24}
+#cr-dock{position:fixed;right:12px;bottom:12px;z-index:9990;display:flex;flex-direction:column;gap:8px}
+#cr-dock button{width:46px;height:46px;border-radius:50%;border:1px solid var(--cr-bd);background:var(--cr-card);color:var(--cr-tx);font-size:19px;cursor:pointer;position:relative;box-shadow:0 4px 14px #0006}
+#cr-dock b{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;border-radius:9px;background:#e5484d;color:#fff;font:700 11px/18px Arial;text-align:center;padding:0 4px}
+#cr-panel{position:fixed;inset:0 0 0 auto;width:min(420px,100%);background:var(--cr-bg);color:var(--cr-tx);z-index:9995;transform:translateX(105%);transition:transform .25s;display:flex;flex-direction:column;border-left:1px solid var(--cr-bd);font-family:Arial,sans-serif}
+#cr-panel.on{transform:none}
+#cr-panel header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--cr-bd);position:static;background:none}
+#cr-tabs{display:flex;overflow-x:auto;gap:4px;padding:8px;border-bottom:1px solid var(--cr-bd)}
+#cr-tabs button{flex:none;padding:7px 11px;border-radius:16px;border:0;background:var(--cr-card);color:var(--cr-mut);cursor:pointer;font-size:13px}
+#cr-tabs button.on{background:var(--cr-ac);color:#111;font-weight:700}
+#cr-body{flex:1;overflow:auto;padding:14px;display:grid;gap:10px;align-content:start}
+.cr-c{background:var(--cr-card);border:1px solid var(--cr-bd);border-radius:12px;padding:12px;display:grid;gap:6px;font-size:14px}
+.cr-c small,.cr-m{color:var(--cr-mut)}
+.cr-b{border:0;border-radius:9px;padding:8px 12px;background:var(--cr-ac);color:#111;font-weight:700;cursor:pointer}
+.cr-b.g{background:var(--cr-card);color:var(--cr-tx);border:1px solid var(--cr-bd)}
+#cr-panel input,#cr-panel select,#cr-panel textarea,#cr-bar input{width:100%;padding:9px;border-radius:9px;border:1px solid var(--cr-bd);background:var(--cr-card);color:var(--cr-tx);box-sizing:border-box}
+.cr-row{display:flex;gap:8px;align-items:center;justify-content:space-between}
+.cr-step{display:flex;gap:4px}.cr-step i{flex:1;height:6px;border-radius:3px;background:var(--cr-bd)}.cr-step i.on{background:var(--cr-ok)}
+.cr-qa{position:absolute;top:8px;right:8px;display:flex;gap:6px;z-index:5}
+.cr-qa button{width:34px;height:34px;border-radius:50%;border:0;background:#000a;color:#fff;font-size:16px;cursor:pointer}
+.cr-qa button.on{background:#e5484d}
+#cr-bar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}#cr-bar input{flex:1;min-width:180px}
+#cr-toast{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);background:var(--cr-card);color:var(--cr-tx);border:1px solid var(--cr-ac);padding:10px 16px;border-radius:12px;z-index:9999;opacity:0;pointer-events:none;transition:opacity .25s}
+#cr-toast.on{opacity:1}
+.cr-snow{position:fixed;top:-10px;z-index:9980;pointer-events:none;color:#fff;animation:crs linear forwards}
+@keyframes crs{to{transform:translateY(110vh) translateX(30px)}}
+@media (max-width:600px){#cr-dock{flex-direction:row;right:auto;left:8px;bottom:8px;background:var(--cr-card);padding:6px;border-radius:30px;border:1px solid var(--cr-bd)}#cr-dock button{width:40px;height:40px;box-shadow:none}#cr-toast{bottom:70px}}
+@media (prefers-reduced-motion:reduce){.cr-snow{display:none}}

@@ -1,0 +1,39 @@
+/* ===== BOTONES: cada información vive en su propio botón ===== */
+.crh{display:none!important}
+header nav,header .burger{display:none!important}
+#crTabs{position:sticky;top:var(--crhh,0px);z-index:55;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  padding:10px 3vw;background:rgba(10,4,6,.94);border-bottom:1px solid rgb(var(--acr,255 24 37)/.25)}
+#crTabs button:first-child{margin-left:auto}#crTabs button:last-child{margin-right:auto}
+#crTabs::-webkit-scrollbar{display:none}
+#crTabs button{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;cursor:pointer;color:#eee;background:rgba(255,255,255,.04);
+  border:1px solid rgb(var(--acr,255 24 37)/.35);border-radius:999px;padding:8px 13px;font:inherit;font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif;
+  font-size:15px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;transition:background .2s,border-color .2s,box-shadow .2s,transform .15s}
+#crTabs button:hover{border-color:var(--ac,#ff1825);box-shadow:0 0 14px rgb(var(--acr,255 24 37)/.35)}
+#crTabs button:active{transform:scale(.96)}
+#crTabs button.on{color:#fff;background:linear-gradient(135deg,var(--ac,#ff1825),var(--ac2,#8a0a14));border-color:var(--acl,#ff6b73);box-shadow:0 0 18px rgb(var(--acr,255 24 37)/.5)}
+#crTabs button span{font-size:15px;line-height:1}
+@media(max-width:900px){#crTabs{padding:8px 4vw}#crTabs button{font-size:14px;padding:7px 12px}}
+@media(prefers-reduced-motion:reduce){#crTabs button{transition:none}}
+/* En celular la barra inferior ya trae el botón Ticket: se oculta el flotante para no repetirlo */
+@media(max-width:650px){.nv-tk{display:none!important}}
+
+/* ===== RENDIMIENTO: el mouse se siente fluido ===== */
+/* fondo de ciudad quieto también en facciones.html (en index ya lo estaba) */
+.skyline,.road:after,.glow,.veh,.spark,.city-bg,.city-bg:before,.city-bg:after,.sg,.sg *{animation:none!important;will-change:auto!important}
+/* el aviso de "cargando" está oculto: no debe seguir girando en segundo plano */
+#crLoad:not(.on),#crLoad:not(.on) *,#crLoad:not(.on) *:after{animation-play-state:paused!important}
+
+
+/* COLOMBIA REALS: barra flotante ordenada (v2026-11-15) */
+#ixPw{left:14px!important;bottom:148px!important;z-index:9010!important}
+#crP{left:14px!important;bottom:88px!important;z-index:9011!important}
+#crU{left:14px!important;bottom:14px!important;z-index:9012!important;max-width:min(92vw,360px)}
+#crU span{max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#mgDc{left:auto!important;right:16px!important;bottom:136px!important;z-index:9010!important}
+body:has(#crU) #mgDc{display:none!important}
+@media(max-width:650px){
+  #ixPw{left:12px!important;bottom:148px!important}
+  #crP{left:12px!important;bottom:88px!important}
+  #crU{left:12px!important;bottom:12px!important}
+  #mgDc{left:auto!important;right:12px!important;bottom:136px!important}
+}

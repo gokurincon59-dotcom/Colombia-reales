@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>COLOMBIA REALS | Entrar</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050818">
+<link rel="icon" href="assets/logo-cr.webp" type="image/webp">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" as="image" href="assets/logo-cr.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" media="print" onload="this.media='all'">
+<script src="assets/config.js"></script>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{background:#050818;color:#fff;font-family:Poppins,"Segoe UI",Arial,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100dvh;padding:20px;overflow-x:hidden}
+#sc{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+body:before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,rgba(5,8,24,.55),rgba(5,8,24,.1) 65%)}
+.c{position:relative;z-index:2;width:min(440px,100%);text-align:center;background:rgba(10,8,28,.62);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:34px 26px 22px;box-shadow:0 20px 80px rgba(0,0,0,.55),0 0 60px rgba(255,24,37,.18);animation:up .9s cubic-bezier(.2,.8,.2,1) both}
+.c:before{content:"";position:absolute;left:26px;right:26px;top:0;height:4px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,#FCD116 50%,#003893 50% 75%,#CE1126 75%)}
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+#lg{width:92px;height:92px;object-fit:contain;filter:drop-shadow(0 0 18px rgba(255,24,37,.8));-webkit-tap-highlight-color:transparent;user-select:none;animation:fl 4s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-5px)}}
+h1{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:4px;margin:6px 0 0;font-size:46px;line-height:1;text-shadow:0 0 22px rgba(255,24,37,.7)}h1 b{color:#ff1825;font-weight:400}
+.tag{display:block;margin-top:8px;font-size:12px;letter-spacing:3px;color:#ffd36b}
+p{margin:8px 0 0;color:#e2d9ea;font-size:14px}
+.er{display:none;margin:16px 0 0;padding:11px 13px;border-radius:12px;background:rgba(255,24,37,.14);border:1px solid #ff4550;color:#ffc2c6;font-size:13px;line-height:1.5;text-align:left}
+#crGo{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:22px;padding:15px;border:0;border-radius:14px;background:linear-gradient(135deg,#6a77ff,#5865F2);color:#fff;font:600 16px Poppins,"Segoe UI",Arial,sans-serif;cursor:pointer;transition:transform .2s,filter .2s;animation:pu 2.8s ease-in-out infinite}
+#crGo:hover{transform:translateY(-2px);filter:brightness(1.1)}#crGo:disabled{opacity:.75;cursor:wait;animation:none}
+#crGo:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:sh 3.4s ease-in-out infinite}
+@keyframes sh{0%,55%{left:-60%}100%{left:130%}}@keyframes pu{50%{box-shadow:0 0 30px 6px rgba(88,101,242,.5)}}
+#crGo svg{width:24px;height:24px;fill:#fff;flex:none}
+a{color:#ff8a92}.lnk{display:block;margin-top:12px;font-size:12.5px;text-decoration:none}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.st li{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:10px 4px;font-size:12px;color:#eee}.st b{display:block;font-size:18px;margin-bottom:2px}
+#crSt2{margin-top:12px;font-size:12.5px;color:#ffd36b}
+details{margin-top:14px;text-align:left;font-size:12.5px;color:#d9cfe2;background:rgba(255,255,255,.05);border-radius:12px;padding:10px 12px}
+summary{cursor:pointer;font-weight:600;color:#fff}details ul{margin:8px 0 0;padding-left:18px;line-height:1.6}
+small{display:block;margin-top:14px;color:#b8aec4;font-size:12px;line-height:1.5}
+.dv{display:none;margin:12px auto 0;background:none;border:1px solid #777;color:#ccc;border-radius:30px;padding:8px 16px;font-size:12px;cursor:pointer}
+#adm{display:none}
+:focus-visible{outline:3px solid #ffd36b;outline-offset:3px;border-radius:8px}
+@media(max-width:480px){h1{font-size:38px}.c{padding:30px 18px 20px}}
+@media(prefers-reduced-motion:reduce){.c,#crGo,#lg,#crGo:after{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="sc" aria-hidden="true"></canvas>
+<main class="c">
+<img id="lg" src="assets/logo-cr.webp" alt="Colombia Reals" width="92" height="92">
+<h1>COLOMBIA <b>REALS</b></h1>
+<span class="tag">🎄 NAVIDAD EN BUCARAMANGA 🎆</span>
+<p>Catálogo oficial · Acceso para miembros</p>
+<div class="er" id="crMsg" role="alert"></div>
+<button type="button" id="crGo"><svg viewBox="0 0 24 24"  fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.79 19.79 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.74 19.74 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.1 13.1 0 01-1.872-.892.077.077 0 01-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 01.078-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.099.246.198.373.292a.077.077 0 01-.006.127 12.3 12.3 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.84 19.84 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg><span>Entrar con Discord</span></button>
+<a class="lnk" id="again" href="#" style="display:none">Reintentar con otra cuenta de Discord</a>
+<ol class="st"><li><b>1️⃣</b>Entra con Discord</li><li><b>2️⃣</b>Elige tu ítem</li><li><b>3️⃣</b>Pídelo por ticket</li></ol>
+<div id="crSt2"></div>
+<details><summary>¿Problemas para entrar?</summary><ul>
+<li>Debes estar en nuestro servidor de Discord. <a id="crInv" target="_blank" rel="noopener">Únete aquí</a> y vuelve.</li>
+<li>Si te sale “sesión terminada”, pulsa de nuevo el botón o reintenta con otra cuenta.</li>
+<li>En celular, ábrelo desde Chrome o Safari (no dentro de otra app).</li>
+<li>Discord solo nos muestra tu usuario y tus servidores.</li></ul></details>
+<small>🔒 Nunca vemos tu contraseña: el acceso lo gestiona Discord.<br>Toca el cielo para lanzar pólvora 🎆</small>
+<a class="lnk" id="adm" href="admin-login.html" style="color:#ffd66b">⚙️ Acceso de administrador</a>
+<button type="button" class="dv" id="dv">Entrar en modo prueba (solo en tu PC)</button>
+</main>
+<script>
+/* ===== LOGIN (misma lógica de antes) ===== */
+(()=>{const C=window.CR||{},K='cr_sess',$=i=>document.getElementById(i);
+const dev=location.protocol=='file:'||/^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+const base=C.redirectUri||(location.origin+location.pathname.replace(/[^/]*$/,''));
+const msg=t=>{const m=$('crMsg');m.textContent=t;m.style.display='block'};
+const q=new URLSearchParams(location.search).get('e');
+const sc=['identify'];if(C.requireGuild&&C.guildId)sc.push('guilds');if(C.guildId&&C.vipRoleIds&&C.vipRoleIds.length)sc.push('guilds.members.read');
+const mk=x=>C.clientId?'https://discord.com/oauth2/authorize?client_id='+C.clientId+'&response_type=token&redirect_uri='+encodeURIComponent(base)+'&scope='+encodeURIComponent(sc.join(' '))+(x||''):'';
+if(q){try{localStorage.removeItem(K)}catch(e){}
+ msg(q=='denied'?'Tu cuenta de Discord no está en el servidor de Colombia Reals. Únete e inténtalo de nuevo.':q=='error'?'No pudimos verificar tu sesión de Discord. Inténtalo de nuevo.':'Tu sesión terminó. Inicia sesión de nuevo.');
+ const a=$('again');a.style.display='block';a.href=mk('&prompt=consent');document.querySelector('details').open=true}
+else{try{const t=JSON.parse(localStorage.getItem(K)||'null');if(t&&t.e>Date.now()){location.replace('index.html');return}}catch(e){}}
+const url=mk();
+if(url&&location.protocol!='file:'){const l=document.createElement('link');l.rel='preconnect';l.href='https://discord.com';document.head.appendChild(l)}
+$('crGo').onclick=function(){
+ if(!url||location.protocol=='file:'){msg(location.protocol=='file:'?'Sube el sitio a internet: el login con Discord no funciona abriendo el archivo directo.':'Falta el Client ID en assets/config.js.');return}
+ this.disabled=true;this.lastChild.textContent='Abriendo Discord…';location.href=url};
+if(dev){const b=$('dv');b.style.display='block';b.onclick=()=>{try{sessionStorage.setItem('cr_dev',1)}catch(e){}location.href='index.html'}}
+const iv=$('crInv');if(C.invite)iv.href=C.invite;else iv.removeAttribute('href');
+/* acceso admin escondido: toca 3 veces el logo, o mantenlo pulsado 1 s (o agrega ?admin a la dirección) */
+const adm=$('adm'),open=()=>{adm.style.display='block'};
+if(/[?&]admin\b/.test(location.search))open();
+let n=0,tm,lp;const lg=$('lg');lg.onclick=()=>{n++;clearTimeout(tm);tm=setTimeout(()=>n=0,900);if(n>=3)open()};
+lg.onpointerdown=()=>{lp=setTimeout(open,1000)};['pointerup','pointerleave'].forEach(e=>lg.addEventListener(e,()=>clearTimeout(lp)));
+fetch((C.apiUrl||'')+'/api/year').then(r=>r.json()).then(d=>{if(d&&d.ok&&d.redeems>0)$('crSt2').textContent='🎁 '+d.redeems+' canjes · 👥 '+d.players+' jugadores en '+d.year}).catch(()=>{});
+})();
+/* ===== PAISAJE: Bucaramanga navideña dibujada en vivo ===== */
+(()=>{const cv=document.getElementById('sc'),g=cv.getContext('2d'),R=Math.random,TAU=Math.PI*2;
+const low=(navigator.hardwareConcurrency||8)<=4||(navigator.deviceMemory||8)<=4||(navigator.connection&&navigator.connection.saveData);
+const calm=matchMedia('(prefers-reduced-motion:reduce)').matches,Q=low?.55:1;
+const COL={r:[255,43,61],o:[255,210,63],b:[63,167,255],p:[255,123,213],v:[125,255,138],l:[255,170,60],w:[255,255,255]},SP={};
+for(const k in COL){const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d'),r=COL[k],gr=x.createRadialGradient(32,32,0,32,32,32);
+ gr.addColorStop(0,'rgba('+r+',1)');gr.addColorStop(.3,'rgba('+r+',.45)');gr.addColorStop(1,'rgba('+r+',0)');x.fillStyle=gr;x.fillRect(0,0,64,64);SP[k]=c}
+const LK=['r','o','b','p','v'],HU=[48,220,355,130,300,30];
+let W,H,D,bg,wins,lights,stars,tree,lamps=[],ps=[],rk=[],fl=[],run=false,last=0,nextR=800,skip=0;
+function build(){D=Math.min(devicePixelRatio||1,1.5);W=innerWidth;H=innerHeight;cv.width=W*D;cv.height=H*D;
+ bg=document.createElement('canvas');bg.width=cv.width;bg.height=cv.height;const c=bg.getContext('2d');c.scale(D,D);
+ let s=c.createLinearGradient(0,0,0,H);s.addColorStop(0,'#050818');s.addColorStop(.45,'#1a1245');s.addColorStop(.75,'#5b1f52');s.addColorStop(1,'#d2573a');c.fillStyle=s;c.fillRect(0,0,W,H);
+ stars=[];for(let i=0;i<(low?60:120);i++){const x=R()*W,y=R()*H*.55,r=R()*1.3+.4;stars.push({x,y,r,p:R()*TAU});c.fillStyle='rgba(255,255,255,'+(.3+R()*.5)+')';c.fillRect(x,y,r,r)}
+ const mx=W*.82,my=H*.17,m=c.createRadialGradient(mx,my,4,mx,my,80);m.addColorStop(0,'rgba(255,244,214,.55)');m.addColorStop(1,'rgba(255,244,214,0)');c.fillStyle=m;c.fillRect(mx-80,my-80,160,160);c.fillStyle='#fff3d2';c.beginPath();c.arc(mx,my,22,0,TAU);c.fill();
+ const base=H*.8;[['#2a1a52',.46,.0035,.0021],['#190f3b',.36,.0052,.0033]].forEach(([col,hh,f1,f2],k)=>{c.fillStyle=col;c.beginPath();c.moveTo(0,H);for(let x=0;x<=W;x+=6)c.lineTo(x,base-H*hh*.5-Math.sin(x*f1+k*2)*H*.05-Math.sin(x*f2*3+k)*H*.03);c.lineTo(W,H);c.fill()});
+ /* ciudad */
+ wins=[];const bt=H*.86;let x=-10;
+ while(x<W){const w=14+R()*30,h=24+R()*H*.1+(Math.sin(x*.01)+1)*H*.02;c.fillStyle='#07061a';c.fillRect(x,bt-h,w,h+H);
+  c.fillStyle='rgba(255,205,120,.55)';for(let wy=bt-h+6;wy<bt-4;wy+=9)for(let wx=x+4;wx<x+w-4;wx+=7)if(R()<.45){c.fillRect(wx,wy,2.5,3.5);if(R()<.12)wins.push({x:wx,y:wy,p:R()*TAU})}x+=w+R()*3}
+ /* Catedral de la Sagrada Familia (silueta) */
+ const cx=W>760?W*.66:W*.2,cb=bt,ge=c.createRadialGradient(cx,cb-60,5,cx,cb-60,120);ge.addColorStop(0,'rgba(255,190,90,.35)');ge.addColorStop(1,'rgba(255,190,90,0)');c.fillStyle=ge;c.fillRect(cx-120,cb-180,240,200);
+ c.fillStyle='#0a0822';c.fillRect(cx-34,cb-48,68,60);c.beginPath();c.arc(cx,cb-48,26,Math.PI,0);c.fill();c.fillRect(cx-3,cb-90,6,14);c.fillRect(cx-8,cb-84,16,3);c.fillRect(cx-1.5,cb-100,3,12);
+ [-44,44].forEach(o=>{c.fillRect(cx+o-8,cb-82,16,94);c.beginPath();c.moveTo(cx+o-10,cb-82);c.lineTo(cx+o,cb-110);c.lineTo(cx+o+10,cb-82);c.fill()});
+ c.fillStyle='rgba(255,205,120,.8)';[-44,44].forEach(o=>c.fillRect(cx+o-2,cb-66,4,9));c.fillRect(cx-3,cb-30,6,14);
+ c.fillStyle='#04030c';c.fillRect(0,H*.955,W,H);
+ /* árbol de Navidad */
+ const th=Math.min(H*.5,W>760?440:230),tx=W>760?W*.13:W*.87,ty=H*.985;tree={x:tx,top:ty-th*.98,r:th};lights=[];
+ c.fillStyle='#3a1f10';c.fillRect(tx-th*.035,ty-th*.1,th*.07,th*.1);
+ for(let i=0;i<4;i++){const y1=ty-th*.07-i*th*.22,wd=th*(.38-i*.075),hh=th*.36,gr=c.createLinearGradient(tx-wd,0,tx+wd,0);gr.addColorStop(0,'#05381b');gr.addColorStop(.5,'#13863c');gr.addColorStop(1,'#05381b');
+  c.fillStyle=gr;c.beginPath();c.moveTo(tx,y1-hh);c.lineTo(tx+wd,y1);c.lineTo(tx-wd,y1);c.fill();
+  const y0=y1-hh*.3,hw=wd*.7*.9;c.strokeStyle='rgba(255,210,90,.85)';c.lineWidth=2;c.beginPath();c.moveTo(tx-hw,y0);c.quadraticCurveTo(tx,y0+hh*.4,tx+hw,y0);c.stroke();
+  const nn=Math.max(4,Math.round(hw/7));for(let k=0;k<nn;k++){const u=(k+.5)/nn;lights.push({x:tx-hw+u*hw*2,y:y0+Math.sin(u*Math.PI)*hh*.2,k:LK[(k+i)%5],p:R()*TAU})}
+  for(let k=0;k<3+i;k++){const yy=y1-hh*(.1+R()*.35),ww=wd*(1-(y1-yy)/hh)*.85,bx=tx+(R()*2-1)*ww;c.fillStyle=['#ff2b3d','#ffd23f','#3fa7ff','#ff7bd5'][k%4];c.beginPath();c.arc(bx,yy,3.4,0,TAU);c.fill();c.fillStyle='rgba(255,255,255,.7)';c.fillRect(bx-1.4,yy-1.6,1.4,1.4)}}
+ [['#d6203a',-.2],['#2a6fe0',.08],['#e0b020',.26]].forEach(([col,o],i)=>{const w=th*.09,x0=tx+o*th*.7-w/2,y0=ty-w*.8-(i%2)*2;c.fillStyle=col;c.fillRect(x0,y0,w,w*.8);c.fillStyle='rgba(255,255,255,.8)';c.fillRect(x0+w*.42,y0,w*.16,w*.8)});
+ if(!lamps.length)for(let i=0;i<(low?5:9);i++)lamps.push({x:R()*W,y:H*(.35+R()*.65),s:.012+R()*.02,p:R()*TAU})}
+const star=(t,c)=>{const x=tree.x,y=tree.top,r=Math.max(7,tree.r*.035),a=.7+.3*Math.sin(t*.004);g.globalAlpha=a;g.drawImage(SP.o,x-r*4,y-r*4,r*8,r*8);g.globalAlpha=1;g.fillStyle='#ffe27a';g.beginPath();for(let i=0;i<10;i++){const rr=i%2?r*.45:r,an=-Math.PI/2+i*Math.PI/5;g.lineTo(x+Math.cos(an)*rr,y+Math.sin(an)*rr)}g.fill()};
+function launch(tx,ty){if(rk.length>4)return;const x=tx!=null?tx+(R()*60-30):R()*W;rk.push({x,y:H,tx:tx!=null?tx:x+(R()*120-60),ty:ty!=null?ty:H*(.1+R()*.32),h:HU[R()*HU.length|0]})}
+function burst(x,y,h){if(ps.length>650)return;const t=R()*3|0,n=Math.round((t==1?48:70)*Q),dr=t==2?.975:.965,gv=t==2?.00018:.00012,k=t==2?'o':LK[R()*5|0];fl.push({x,y,l:1,k});
+ for(let i=0;i<n;i++){const a=t==1?TAU*i/n:R()*TAU,v=t==1?.3:t==2?.1+R()*.2:.2+R()*.2;ps.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,l:1,d:(t==2?.0005:.0007+R()*.0005),h:t==2?44:h+R()*30-15,dr,gv})}}
+function draw(t,dt){g.setTransform(D,0,0,D,0,0);g.globalCompositeOperation='source-over';g.globalAlpha=1;g.drawImage(bg,0,0,W,H);
+ g.fillStyle='#fff';for(let i=0;i<Math.min(30,stars.length);i++){const s=stars[i];g.globalAlpha=.25+.75*Math.abs(Math.sin(t*.0015+s.p));g.fillRect(s.x,s.y,s.r+.4,s.r+.4)}
+ g.fillStyle='#ffd78a';wins.forEach(w=>{g.globalAlpha=.25+.6*(.5+.5*Math.sin(t*.002+w.p));g.fillRect(w.x-.4,w.y-.4,3.4,4.6)});
+ g.globalAlpha=1;g.globalCompositeOperation='lighter';
+ lights.forEach(l=>{g.globalAlpha=.3+.7*(.5+.5*Math.sin(t*.005+l.p));g.drawImage(SP[l.k],l.x-9,l.y-9,18,18)});g.globalAlpha=1;star(t);
+ lamps.forEach(l=>{l.y-=l.s*dt;if(l.y<-30){l.y=H+30;l.x=R()*W}const x=l.x+Math.sin(t*.0008+l.p)*18;g.globalAlpha=.8;g.drawImage(SP.l,x-14,l.y-14,28,28)});g.globalAlpha=1;
+ fl=fl.filter(f=>{f.l-=dt*.004;if(f.l<=0)return false;g.globalAlpha=f.l*.5;const s=230*(1.2-f.l*.4);g.drawImage(SP[f.k],f.x-s/2,f.y-s/2,s,s);return true});
+ rk=rk.filter(r=>{const dx=r.tx-r.x,dy=r.ty-r.y,d=Math.hypot(dx,dy),st=.55*dt;if(d<=st){burst(r.tx,r.ty,r.h);return false}r.x+=dx/d*st;r.y+=dy/d*st;g.globalAlpha=1;g.drawImage(SP.w,r.x-6,r.y-6,12,12);if(ps.length<650&&R()<.7)ps.push({x:r.x,y:r.y,vx:0,vy:.02,l:.6,d:.004,h:40,dr:.9,gv:0});return true});
+ const f=Math.pow;ps=ps.filter(p=>{p.l-=p.d*dt;if(p.l<=0)return false;const k=f(p.dr,dt/16.7);p.vx*=k;p.vy=p.vy*k+p.gv*dt;p.x+=p.vx*dt;p.y+=p.vy*dt;g.globalAlpha=Math.min(1,p.l*1.4);g.fillStyle='hsl('+p.h+',100%,'+(55+35*p.l)+'%)';g.fillRect(p.x,p.y,2.6,2.6);return true});
+ g.globalAlpha=1;g.globalCompositeOperation='source-over'}
+function frame(now){if(!run)return;requestAnimationFrame(frame);const dt=Math.min(now-last,50);if(low&&dt<30)return;last=now;
+ if(now>nextR){launch();nextR=now+(1300+R()*1900)/Q}draw(now,dt)}
+function start(){if(calm||run)return;run=true;last=performance.now();requestAnimationFrame(frame)}
+build();if(calm)draw(0,0);else{start();[300,1100,1900].forEach(d=>setTimeout(()=>launch(),d))}
+let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{build();if(calm)draw(0,0)},150)});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)run=false;else start()});
+addEventListener('pointerdown',e=>{if(calm||e.target.closest('button,a,summary,details,input,img'))return;launch(e.clientX,e.clientY)});
+})();
+</script>
+</body>
+</html>

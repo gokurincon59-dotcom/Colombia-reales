@@ -1,0 +1,65 @@
+/* ===== ACTUALIZACIÓN GRANDE · extras ===== */
+/* Barra de progreso de lectura */
+#xProg{position:fixed;top:0;left:0;height:3px;width:100%;z-index:10000;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#ffd66b,#ff1825,#22d36a);box-shadow:0 0 12px rgba(255,214,107,.8);pointer-events:none}
+
+/* Botón y panel de Navidad */
+#xFab{position:fixed;right:18px;bottom:132px;z-index:60;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,214,107,.6);background:linear-gradient(135deg,#b3121f,#0f6b36);color:#fff;font-size:22px;cursor:pointer;box-shadow:0 6px 22px rgba(0,0,0,.5),0 0 22px rgba(255,214,107,.35);transition:transform .25s}
+#xFab:hover{transform:rotate(-12deg) scale(1.08)}
+#xPan{position:fixed;right:18px;bottom:188px;z-index:61;width:min(290px,calc(100vw - 36px));padding:16px;border-radius:20px;background:rgba(14,6,8,.94);border:1px solid rgba(255,214,107,.45);box-shadow:0 20px 60px rgba(0,0,0,.7),0 0 40px rgba(255,40,55,.2);color:#fff;font:500 13px Poppins,Arial,sans-serif;opacity:0;transform:translateY(12px) scale(.96);pointer-events:none;transition:opacity .22s,transform .22s}
+#xPan.on{opacity:1;transform:none;pointer-events:auto}
+#xPan h4{margin:0 0 10px;font:400 20px "Bebas Neue",Impact,sans-serif;letter-spacing:3px;color:#ffd66b}
+#xPan label{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 0;border-top:1px solid rgba(255,90,100,.18);cursor:pointer}
+#xPan input{appearance:none;-webkit-appearance:none;width:42px;height:24px;border-radius:20px;background:#3a1a20;position:relative;cursor:pointer;flex:none;transition:background .2s;border:0!important}
+#xPan input:before{content:"";position:absolute;left:3px;top:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform .2s}
+#xPan input:checked{background:linear-gradient(135deg,#22d36a,#0f8a45)}#xPan input:checked:before{transform:translateX(18px)}
+#xPan small{display:block;margin-top:10px;color:#a99;font-size:11px;line-height:1.4}
+
+/* Sección especial con cuenta regresiva */
+#xNav{position:relative;text-align:center;padding:60px 5vw 20px}
+#xNav .cd{display:flex;justify-content:center;gap:clamp(8px,2vw,18px);flex-wrap:wrap;margin:26px 0 10px}
+#xNav .cd div{min-width:clamp(72px,16vw,116px);padding:16px 8px 12px;border-radius:20px;background:linear-gradient(160deg,rgba(179,18,31,.45),rgba(15,107,54,.38));border:1px solid rgba(255,214,107,.5);box-shadow:0 14px 40px rgba(0,0,0,.45),inset 0 0 24px rgba(255,255,255,.05)}
+#xNav .cd b{display:block;font:400 clamp(34px,7vw,60px)/1 "Bebas Neue",Impact,sans-serif;letter-spacing:2px;background:linear-gradient(180deg,#fff,#ffd66b);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+#xNav .cd span{font-size:11px;letter-spacing:4px;color:#ffb3b8;text-transform:uppercase}
+#xNav p{max-width:620px;margin:10px auto 22px;color:#e8dcdc;line-height:1.6}
+#xNav .bt{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* Botón compartir en cada tarjeta */
+.xShr{position:absolute;right:10px;top:10px;z-index:2;width:32px;height:32px;border-radius:50%;border:1px solid var(--acm,#7a1a22);background:rgba(0,0,0,.75);color:#fff;font-size:14px;cursor:pointer;transition:transform .25s,background .25s}
+.xShr:hover{transform:scale(1.18);background:#5865F2}
+
+/* Brillo que sigue al mouse */
+.xSp{position:fixed;left:0;top:0;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;pointer-events:none;z-index:9998;opacity:0;background:radial-gradient(circle,#fff,#ffd66b 45%,transparent 70%);transition:opacity .7s,transform .7s;will-change:transform,opacity}
+
+/* Trineo volador */
+#xSl{position:fixed;top:200px;left:0;width:330px;z-index:9;pointer-events:none;opacity:0;will-change:transform;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))}
+#xSl.go{animation:xFly 16s linear forwards}
+@keyframes xFly{0%{transform:translate3d(-300px,40px,0) rotate(6deg);opacity:1}30%{transform:translate3d(30vw,-10px,0) rotate(-2deg)}65%{transform:translate3d(65vw,30px,0) rotate(3deg)}100%{transform:translate3d(calc(100vw + 300px),-20px,0) rotate(-4deg);opacity:1}}
+
+/* Barra inferior para celulares */
+#xBar{display:none}
+@media(max-width:650px){
+ #xBar{position:fixed;left:10px;right:10px;bottom:10px;z-index:70;display:flex;justify-content:space-around;padding:6px;border-radius:22px;background:rgba(14,6,8,.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,214,107,.4);box-shadow:0 10px 34px rgba(0,0,0,.6)}
+ #xBar a{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 2px;border-radius:16px;color:#e8dcdc;text-decoration:none;font:600 10px Poppins,Arial,sans-serif;letter-spacing:.5px}
+ #xBar a span{font-size:18px}#xBar a.on{background:linear-gradient(135deg,#b3121f,#7a0a18);color:#fff}
+ body{padding-bottom:84px}
+ #xFab{bottom:150px;right:12px}#xPan{bottom:204px;right:12px}
+ #top{bottom:150px!important}.nv-tk{display:none}
+ #xSl{width:170px;top:150px}
+}
+html.xnolights .nv-lights,html.xnoaurora .nv-bg,html.xnosparkle .xSp,html.xnosleigh #xSl{display:none!important}
+@media(prefers-reduced-motion:reduce){#xSl,.xSp{display:none!important}}
+
+
+/* COLOMBIA REALS: barra flotante ordenada (v2026-11-15) */
+#ixPw{left:14px!important;bottom:148px!important;z-index:9010!important}
+#crP{left:14px!important;bottom:88px!important;z-index:9011!important}
+#crU{left:14px!important;bottom:14px!important;z-index:9012!important;max-width:min(92vw,360px)}
+#crU span{max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#mgDc{left:auto!important;right:16px!important;bottom:136px!important;z-index:9010!important}
+body:has(#crU) #mgDc{display:none!important}
+@media(max-width:650px){
+  #ixPw{left:12px!important;bottom:148px!important}
+  #crP{left:12px!important;bottom:88px!important}
+  #crU{left:12px!important;bottom:12px!important}
+  #mgDc{left:auto!important;right:12px!important;bottom:136px!important}
+}

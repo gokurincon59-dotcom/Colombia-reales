@@ -1,0 +1,25 @@
+/* Mi pedido + mejoras del catálogo (assets/pedido.css) */
+.item{position:relative;transition:transform .25s,box-shadow .25s}
+.item:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+.pd-add{position:absolute;left:10px;bottom:10px;z-index:3;border:0;border-radius:999px;padding:8px 13px;font:700 12px/1 inherit;cursor:pointer;background:rgba(10,12,20,.82);color:#fff;border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(6px)}
+.pd-add.on{background:#1fa55b;border-color:#1fa55b}
+.pd-count{margin:6px 2px 14px;font-size:13px;opacity:.75}
+#pdF{position:fixed;left:14px;bottom:88px;z-index:9990;border:0;border-radius:999px;padding:12px 16px;font-weight:800;cursor:pointer;background:var(--acl,#f5c542);color:#111;box-shadow:0 8px 24px rgba(0,0,0,.5);display:none}
+#pdF b{background:#111;color:#fff;border-radius:999px;padding:2px 8px;margin-left:6px}
+#pdP{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:14px}
+#pdP.open{display:flex}
+.pd-box{width:min(520px,100%);max-height:88vh;overflow:auto;background:#12141c;color:#fff;border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:18px}
+.pd-h{display:flex;justify-content:space-between;align-items:center}.pd-h h3{margin:0}
+.pd-h button{background:none;border:0;color:#fff;font-size:20px;cursor:pointer}
+.pd-r{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.pd-r img{width:64px;height:40px;object-fit:cover;border-radius:8px}.pd-r div{flex:1;font-size:14px}.pd-r small{display:block;opacity:.6}
+.pd-r button{background:none;border:0;color:#ff6b6b;cursor:pointer;font-size:16px}
+#pdN{width:100%;margin:12px 0;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:#0b0d13;color:#fff;padding:10px;box-sizing:border-box}
+.pd-a{display:flex;gap:10px}.pd-a button{border:0;border-radius:12px;padding:12px 14px;font-weight:800;cursor:pointer}
+.pd-b{flex:1;background:var(--acl,#f5c542);color:#111}.pd-g{background:#2a2d38;color:#fff}
+.pd-e{opacity:.7;text-align:center;padding:22px 0}
+#pdM{display:flex;gap:8px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+#pdM button{border-radius:12px;padding:10px 16px;font-weight:700;cursor:pointer;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff}
+#pdM button.on{background:#1fa55b;border-color:#1fa55b}
+#pdT{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;z-index:100000;background:#111;color:#fff;padding:10px 16px;border-radius:999px;transition:.25s;pointer-events:none}
+#pdT.on{opacity:1;transform:translate(-50%,0)}

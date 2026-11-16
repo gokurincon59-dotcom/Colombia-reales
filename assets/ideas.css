@@ -1,0 +1,43 @@
+/* IDEAS: estilos (mismo estilo rojo/dorado colombiano) */
+.ix-offer{position:relative;z-index:2;max-width:1000px;margin:18px auto;padding:16px 22px;border-radius:18px;display:grid;grid-template-columns:1fr auto;gap:10px 20px;align-items:center;background:linear-gradient(135deg,rgba(180,15,30,.55),rgba(10,90,45,.45));border:1px solid rgba(255,214,107,.5);box-shadow:0 0 30px rgba(255,40,55,.25)}
+.ix-offer .l b{display:block;font:26px "Bebas Neue",Impact,sans-serif;letter-spacing:3px;color:#ffd66b}.ix-offer .l small{color:#fff;opacity:.85;font-size:12px}
+.ix-offer .t{font:40px "Bebas Neue",Impact,sans-serif;letter-spacing:3px;color:#fff;text-shadow:0 0 14px rgba(255,214,107,.7);font-variant-numeric:tabular-nums}
+.ix-offer .c{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.ix-offer .c button{background:rgba(0,0,0,.45);color:#fff;border:1px solid rgba(255,214,107,.5);border-radius:30px;padding:6px 14px;cursor:pointer;font:600 12px Poppins,Arial,sans-serif}.ix-offer .c button:hover{background:rgba(255,214,107,.2)}
+.ix-offer .nw{margin-left:auto;font:600 12px Poppins,Arial,sans-serif;color:#ffd66b}
+.item{position:relative}.bdg{position:absolute;z-index:3;top:10px;left:10px;font:normal 600 11px Poppins,Arial,sans-serif;padding:4px 10px;border-radius:20px;color:#fff;letter-spacing:.5px;pointer-events:none}
+.bdg.hot{background:linear-gradient(135deg,#ff2a3a,#b3121f)}.bdg.nw{background:linear-gradient(135deg,#22d36a,#0f6b36)}.item .bdg.hot+.bdg.nw{top:38px}
+#grid.only-hot .item:not(.b-hot),#grid.only-new .item:not(.b-new){display:none}
+.ix-combos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;max-width:900px;margin:20px auto}
+.ix-cb{padding:20px;border-radius:18px;background:rgba(22,9,12,.8);border:1px solid rgba(255,214,107,.4);text-align:center}
+.ix-cb b{font:26px "Bebas Neue",Impact,sans-serif;letter-spacing:2px;color:#ffd66b}.ix-cb ul{list-style:none;padding:0;margin:10px 0;color:#fff}.ix-cb li{padding:4px 0;border-top:1px solid rgba(255,90,100,.18)}.ix-cb em{display:block;margin-bottom:12px;color:#ff8a93;font-style:normal;font-size:13px}
+.ix-ev{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;max-width:900px;margin:20px auto}
+.ix-e{display:flex;gap:14px;align-items:center;padding:12px 16px;border-radius:16px;background:rgba(22,9,12,.8);border:1px solid rgba(255,90,100,.25);text-align:left}.ix-e.nx{border-color:#ffd66b;box-shadow:0 0 22px rgba(255,214,107,.25)}
+.ix-e .dt{flex:none;width:56px;height:62px;border-radius:12px;background:linear-gradient(180deg,#b3121f,#7a0a18);text-align:center;color:#fff;display:flex;flex-direction:column;justify-content:center}.ix-e .dt b{font:28px "Bebas Neue",Impact,sans-serif;line-height:1}.ix-e .dt small{font-size:11px;letter-spacing:2px;color:#ffd66b}
+.ix-e h4{margin:0;font:20px "Bebas Neue",Impact,sans-serif;letter-spacing:2px;color:#fff}.ix-e h4 em{font:600 10px Poppins,Arial,sans-serif;background:#ffd66b;color:#000;padding:2px 8px;border-radius:10px;vertical-align:middle;margin-left:6px;font-style:normal}.ix-e p{margin:2px 0 0;font-size:12px;color:#c9b}
+.ix-adv{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:10px;max-width:760px;margin:20px auto}
+.ix-adv .dr{aspect-ratio:1;border-radius:14px;border:1px solid rgba(255,214,107,.45);background:linear-gradient(135deg,#7a0a18,#0f6b36);color:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .15s}
+.ix-adv .dr:hover:not(.lk){transform:scale(1.07)}.ix-adv .dr b{font:30px "Bebas Neue",Impact,sans-serif}.ix-adv .dr.lk{filter:grayscale(.85) brightness(.6);cursor:not-allowed}.ix-adv .dr.op{border-color:#ffd66b;box-shadow:0 0 16px rgba(255,214,107,.5)}
+#ixAM{position:fixed;inset:0;z-index:99991;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.75)}#ixAM.on{display:flex}
+#ixAM .b{width:min(380px,100%);padding:26px;border-radius:20px;background:#12060a;border:1px solid #ffd66b;text-align:center;color:#fff;box-shadow:0 0 50px rgba(255,40,55,.4)}#ixAM h3{margin:0 0 8px;font:32px "Bebas Neue",Impact,sans-serif;letter-spacing:3px;color:#ffd66b}#ixAM p{margin:0 0 18px}
+#ixAM .r{display:flex;gap:10px}#ixAM .r button{flex:1;padding:11px;border-radius:30px;border:1px solid #555;background:#16090c;color:#fff;cursor:pointer}#ixAM .r .ok{background:linear-gradient(135deg,#0b8a3c,#06562a);border-color:#22d36a}
+.ix-ts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;max-width:900px;margin:20px auto}.ix-t{padding:18px;border-radius:16px;background:rgba(22,9,12,.8);border:1px solid rgba(255,214,107,.3);text-align:center}.ix-t img{width:64px;height:64px;border-radius:50%;object-fit:cover}.ix-t b{color:#ffd66b}
+.ix-fq{display:block;width:min(420px,92%);margin:0 auto 16px;padding:11px 18px;border-radius:30px;border:1px solid rgba(255,214,107,.4);background:#16090c;color:#fff}
+.ix-mb{margin:12px 0 0 8px!important;padding:10px 18px!important;background:#16090c!important;border:1px solid #6a222a!important;box-shadow:none!important}
+#ixPw{position:fixed;left:14px;bottom:78px;z-index:50;padding:10px 16px;border-radius:30px;border:1px solid #ffd66b;background:#16090c;color:#fff;font:600 13px Poppins,Arial,sans-serif;cursor:pointer;box-shadow:0 0 18px rgba(255,214,107,.4)}
+@media(max-width:600px){.ix-offer{grid-template-columns:1fr;margin:14px 12px}.ix-offer .t{font-size:34px}.ix-offer .nw{margin-left:0}}
+
+
+/* COLOMBIA REALS: barra flotante ordenada (v2026-11-15) */
+#ixPw{left:14px!important;bottom:148px!important;z-index:9010!important}
+#crP{left:14px!important;bottom:88px!important;z-index:9011!important}
+#crU{left:14px!important;bottom:14px!important;z-index:9012!important;max-width:min(92vw,360px)}
+#crU span{max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#mgDc{left:auto!important;right:16px!important;bottom:136px!important;z-index:9010!important}
+body:has(#crU) #mgDc{display:none!important}
+@media(max-width:650px){
+  #ixPw{left:12px!important;bottom:148px!important}
+  #crP{left:12px!important;bottom:88px!important}
+  #crU{left:12px!important;bottom:12px!important}
+  #mgDc{left:auto!important;right:12px!important;bottom:136px!important}
+}

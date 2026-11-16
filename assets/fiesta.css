@@ -1,0 +1,115 @@
+/* ===== FIESTA + FX · estilos (rojo / dorado / verde, igual que el resto del catálogo) ===== */
+
+/* ---------- Temporadas ---------- */
+html.season-off .nv-lights,html.season-off .nv-rib,html.season-off .nv-bg,html.season-off .nv-hat,html.season-off #snow,html.season-off #ultraSnow,
+html.season-off #xSl,html.season-off .xSp,html.season-off #xFab,html.season-off #xPan,html.season-off #adviento{display:none!important}
+html.season-ny #snow,html.season-ny #ultraSnow,html.season-ny #adviento,html.season-ny #xSl{display:none!important}
+#fsFw{position:fixed;inset:0;width:100%;height:100%;z-index:54;pointer-events:none}
+
+/* ---------- Sección HOY ---------- */
+.fs-hoy,.fs-topsec{position:relative;z-index:2}
+.fs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;max-width:1000px;margin:20px auto}
+.fs-card{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px 18px;border-radius:18px;text-align:center;color:#fff;background:linear-gradient(145deg,rgba(35,12,16,.94),rgba(10,6,8,.94));border:1px solid rgba(255,214,107,.4);box-shadow:0 0 26px rgba(255,24,37,.14)}
+.fs-card small{font:600 11px Poppins,Arial,sans-serif;letter-spacing:2px;color:#ffd66b}
+.fs-card b{font:24px "Bebas Neue",Impact,sans-serif;letter-spacing:2px;color:#8ff0b0}.fs-card b.fs-big{font-size:34px;color:#fff;text-shadow:0 0 14px rgba(255,214,107,.6)}
+.fs-card code{font:700 18px Consolas,monospace;letter-spacing:1px;color:#ffd66b;background:#12080a;border:1px dashed rgba(255,214,107,.6);border-radius:8px;padding:8px 14px;word-break:break-all;user-select:all}
+.fs-card span{font-size:12px;color:#d6c9cb;line-height:1.5}.fs-card span em{font-style:normal;color:#ffd66b;font-weight:700}.fs-card .fs-t{font:600 12px Poppins,Arial,sans-serif;font-variant-numeric:tabular-nums;color:#ffd66b}
+.fs-btn{border:0;border-radius:10px;padding:11px 18px;font:700 12px Poppins,Arial,sans-serif;letter-spacing:1px;color:#fff;cursor:pointer;background:#2a1216;border:1px solid rgba(255,214,107,.35);transition:transform .15s,filter .15s}
+.fs-btn:hover:not(:disabled){transform:translateY(-1px);filter:brightness(1.15)}.fs-btn:disabled{opacity:.5;cursor:not-allowed}
+.fs-btn.ok{background:linear-gradient(135deg,#0b8a3c,#06562a);border-color:#1f6b3a;box-shadow:0 0 18px rgba(20,200,90,.3)}
+.fs-bar{position:relative;width:100%;height:10px;margin:14px 0 8px;border-radius:10px;background:#2a1216}.fs-bar u{position:absolute;left:0;top:0;bottom:0;border-radius:10px;background:linear-gradient(90deg,#b3121f,#ffd66b)}
+.fs-bar i{position:absolute;top:50%;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;background:#1d1d22;border:2px solid #5a1a22;color:#bbb;font:700 10px/20px Poppins,Arial,sans-serif;text-align:center}
+.fs-bar i.on{background:#ffd66b;border-color:#fff;color:#000;box-shadow:0 0 12px #ffd66b}
+.fs-bar i:last-of-type{margin-left:-24px}
+
+/* ---------- Más pedidos ---------- */
+.fs-tops{display:flex;gap:14px;overflow-x:auto;padding:6px 4px 14px;max-width:1000px;margin:18px auto;scroll-snap-type:x proximity}
+.fs-tp{position:relative;flex:0 0 190px;padding:0;border:1px solid rgba(255,214,107,.35);border-radius:14px;overflow:hidden;background:#12080a;color:#fff;cursor:pointer;scroll-snap-align:start;transition:transform .2s}
+.fs-tp:hover{transform:translateY(-3px)}.fs-tp img{display:block;width:100%;height:120px;object-fit:cover}
+.fs-tp span{display:block;padding:9px 10px;font:600 12px Poppins,Arial,sans-serif;text-align:left}
+.fs-tp i{position:absolute;top:8px;left:8px;font-style:normal;font-size:22px;filter:drop-shadow(0 2px 4px #000)}
+
+/* ---------- Inventario ---------- */
+.item .fs-stk{position:absolute;z-index:3;right:10px;top:10px;font:normal 600 11px Poppins,Arial,sans-serif;padding:4px 10px;border-radius:20px;color:#000;background:#ffd66b;box-shadow:0 0 12px rgba(255,214,107,.6);pointer-events:none}
+.item .fs-stk.out{background:#444;color:#fff;box-shadow:none}
+.item.fs-out img{filter:grayscale(.9) brightness(.6)}
+
+/* ---------- Adviento ---------- */
+.ix-adv .dr.fs-today{border-color:#fff;animation:fsGlow 1.6s ease-in-out infinite}
+@keyframes fsGlow{0%,100%{box-shadow:0 0 6px #ffd66b,0 0 0 0 rgba(255,214,107,.7)}50%{box-shadow:0 0 22px #ffd66b,0 0 0 8px rgba(255,214,107,0)}}
+.fs-advt{margin:-6px auto 10px;font:600 13px Poppins,Arial,sans-serif;color:#ffd66b;font-variant-numeric:tabular-nums;text-align:center}.fs-advt b{color:#fff}
+
+/* ---------- Resumen del año ---------- */
+.fs-year{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;max-width:1000px;margin:18px auto;padding:16px 22px;border-radius:18px;color:#fff;background:linear-gradient(135deg,#1b1b22,#3b2a06);border:1px solid #ffd66b;box-shadow:0 0 28px rgba(255,214,107,.3)}
+.fs-year b{display:block;font:26px "Bebas Neue",Impact,sans-serif;letter-spacing:3px;color:#ffd66b}.fs-year span{font-size:12px;opacity:.85}
+
+/* ---------- Dock (lista de deseos) ---------- */
+.fs-dock{position:fixed;left:14px;bottom:calc(132px + env(safe-area-inset-bottom,0px));z-index:52;display:none;flex-direction:column;gap:8px}
+.fs-dock button{position:relative;width:46px;height:46px;border-radius:50%;border:1px solid #ffd66b;background:#16090c;color:#fff;font-size:21px;cursor:pointer;box-shadow:0 0 16px rgba(255,214,107,.35)}
+.fs-dock b{position:absolute;top:-5px;right:-5px;min-width:19px;height:19px;border-radius:10px;background:#ff1825;font:700 11px/19px Poppins,Arial,sans-serif;text-align:center;padding:0 4px}
+
+/* ---------- Ventanas ---------- */
+.fs-ov{position:fixed;inset:0;z-index:99992;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.78);opacity:0;transition:opacity .2s}.fs-ov.on{opacity:1}
+.fs-b{position:relative;width:min(440px,100%);max-height:90vh;overflow:auto;padding:26px 22px;border-radius:16px;text-align:center;color:#fff;background:#140709;border:1px solid #5a1a22;box-shadow:0 0 50px rgba(255,20,35,.3);transform:translateY(14px) scale(.97);transition:transform .22s}.fs-ov.on .fs-b{transform:none}
+.fs-b h3{margin:0 0 6px;font:24px "Bebas Neue",Impact,sans-serif;letter-spacing:3px}.fs-sub{margin:0 0 14px;color:#cdbfc1;font-size:13px}.fs-note{margin:14px 0 0;color:#b9aeb0;font-size:11px;line-height:1.5}.fs-msg{font-size:14px;line-height:1.6;color:#fff}
+.fs-x{position:absolute;top:8px;right:10px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(255,255,255,.08);color:#fff;font-size:15px;cursor:pointer}
+.fs-act{display:flex;gap:10px;margin-top:16px}.fs-act .fs-btn{flex:1}
+.fs-win{border:1px solid #1f6b3a;background:rgba(20,200,90,.08);border-radius:12px;padding:16px;margin:8px 0}.fs-win b{display:block;font:28px "Bebas Neue",Impact,sans-serif;letter-spacing:2px;color:#8ff0b0;margin:4px 0}
+.fs-win code{display:block;margin:6px 0;font:700 17px Consolas,monospace;color:#ffd66b;word-break:break-all}.fs-win small{color:#b9aeb0;font-size:11px}.fs-win p{margin:6px 0 0;font-style:italic;color:#fff}
+.fs-box{font-size:64px;animation:fsPop .7s ease-out}@keyframes fsPop{0%{transform:scale(.2) rotate(-25deg);opacity:0}70%{transform:scale(1.2) rotate(8deg)}100%{transform:none;opacity:1}}
+.fs-gimg{display:block;width:100%;max-height:190px;object-fit:cover;border-radius:12px;margin:0 0 12px}
+.fs-b input,.fs-b textarea,.fs-b select{width:100%;margin-bottom:10px;background:#12080a;color:#fff;border:1px solid #4b171f;border-radius:8px;padding:11px;font:500 13px Poppins,Arial,sans-serif;outline:none;resize:none}.fs-b input:focus,.fs-b textarea:focus,.fs-b select:focus{border-color:#ff1825}
+.fs-row{display:flex;gap:8px;align-items:flex-start}.fs-row select{flex:1}.fs-row .fs-btn{padding:11px 14px}
+.fs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.fs-stats div{background:rgba(255,214,107,.08);border:1px solid rgba(255,214,107,.3);border-radius:12px;padding:12px 4px}.fs-stats b{display:block;font:30px "Bebas Neue",Impact,sans-serif;color:#ffd66b}.fs-stats small{font-size:11px;color:#cdbfc1}
+
+/* lista de deseos / combos */
+.fs-list{display:flex;flex-direction:column;gap:8px;text-align:left}.fs-li{display:flex;align-items:center;gap:10px;padding:6px;border-radius:10px;background:rgba(255,24,37,.07);border:1px solid #3a141b}
+.fs-li img{width:64px;height:40px;object-fit:cover;border-radius:6px;cursor:pointer}.fs-li span{flex:1;font-size:12px;font-weight:600;cursor:pointer}.fs-li button{width:30px;height:30px;border-radius:8px;border:0;background:#2a1216;color:#fff;cursor:pointer}
+.fs-chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:12px;min-height:30px}.fs-chips span{display:inline-flex;align-items:center;gap:6px;padding:6px 6px 6px 12px;border-radius:20px;background:rgba(255,214,107,.12);border:1px solid rgba(255,214,107,.45);font-size:12px}.fs-chips em{color:#8c7e80;font-size:12px}
+.fs-chips button{width:20px;height:20px;border-radius:50%;border:0;background:#2a1216;color:#fff;font-size:10px;cursor:pointer}
+.fs-sum{margin:6px 0 0;padding:12px;border-radius:10px;background:rgba(20,200,90,.07);border:1px solid #1f6b3a;font-size:13px;line-height:1.7}
+
+/* ruleta */
+.fs-wrap{position:relative;width:min(300px,78vw);margin:10px auto 0}.fs-spin{transition:transform 4.4s cubic-bezier(.12,.7,.1,1);filter:drop-shadow(0 0 18px rgba(255,214,107,.4))}.fs-wh{display:block;width:100%}
+.fs-ptr{position:absolute;left:50%;top:-8px;margin-left:-12px;z-index:2;border-left:12px solid transparent;border-right:12px solid transparent;border-top:24px solid #ffd66b;filter:drop-shadow(0 2px 3px #000)}
+.fs-res{min-height:62px;margin-top:14px;font-size:14px;line-height:1.5}.fs-res code{display:block;margin:6px 0;font:700 17px Consolas,monospace;color:#ffd66b}.fs-res small{display:block;color:#b9aeb0}
+
+/* ---------- Modo Nochebuena ---------- */
+html.fs-noche body:after{content:"";position:fixed;inset:0;z-index:4;pointer-events:none;background:radial-gradient(ellipse at 50% 20%,rgba(255,214,107,.06),rgba(0,0,12,.55) 85%)}
+html.fs-noche .nv-lights s{animation-duration:.7s!important;filter:saturate(1.6) brightness(1.25)}
+html.fs-noche .nv-lights.fs-beat{transform:scaleY(1.35);filter:brightness(1.6);transform-origin:top}
+html.fs-noche .nv-lights{transition:transform .12s,filter .12s}
+
+/* ---------- Animación del arma ---------- */
+.fx-gun{position:fixed;inset:0;z-index:99995;pointer-events:none;overflow:hidden}
+.fx-g{position:absolute;left:50%;bottom:16%;width:min(280px,64vw);margin-left:calc(min(280px,64vw)/-2);animation:fxGun 2.5s ease-in-out forwards;filter:drop-shadow(0 12px 18px rgba(0,0,0,.7))}
+.fx-svg{display:block;width:100%}
+.fx-flash{position:absolute;left:84%;top:22%;width:46%;aspect-ratio:1;margin:-23% 0 0 0;border-radius:50%;opacity:0;background:radial-gradient(circle,#fff 0,#ffe27a 24%,rgba(255,120,30,.75) 48%,transparent 70%);animation:fxFlash 2.5s linear forwards}
+.fx-cs{position:absolute;left:46%;top:26%}.fx-cs i{position:absolute;left:0;top:0;width:9px;height:5px;border-radius:1px;background:linear-gradient(#ffd66b,#b8860b);opacity:0;animation:fxCase 1s ease-in forwards}
+.fx-bang{position:absolute;left:50%;top:34%;transform:translate(-50%,-50%) scale(.2);opacity:0;font:84px "Bebas Neue",Impact,sans-serif;letter-spacing:5px;color:#ffd66b;text-shadow:0 0 22px #ff5a1a,3px 3px 0 #b3121f;animation:fxBang 2.5s ease-out forwards}
+@keyframes fxGun{0%{transform:translateX(-120vw) rotate(-6deg)}20%{transform:none}24%{transform:none}27%{transform:translateX(-18px) rotate(-11deg)}36%{transform:none}78%{transform:none;opacity:1}100%{transform:translateX(120vw) rotate(6deg);opacity:0}}
+@keyframes fxFlash{0%,23%{opacity:0;transform:scale(.4)}25%{opacity:1;transform:scale(1.1)}33%,100%{opacity:0;transform:scale(1.5)}}
+@keyframes fxCase{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--dr))}}
+@keyframes fxBang{0%,23%{opacity:0;transform:translate(-50%,-50%) scale(.2)}28%{opacity:1;transform:translate(-50%,-50%) scale(1.25) rotate(-4deg)}45%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-4deg)}70%,100%{opacity:0;transform:translate(-50%,-70%) scale(1.1) rotate(-4deg)}}
+#cjM .b.fx-shake{animation:fxShake .42s linear}@keyframes fxShake{0%,100%{transform:none}20%{transform:translate(-6px,3px)}40%{transform:translate(5px,-3px)}60%{transform:translate(-4px,2px)}80%{transform:translate(3px,-2px)}}
+@media(prefers-reduced-motion:reduce){.fx-gun,#fsFw,.fs-box{display:none!important}.ix-adv .dr.fs-today{animation:none}.fs-spin{transition-duration:.6s}}
+@media(max-width:560px){.fs-dock{bottom:calc(150px + env(safe-area-inset-bottom,0px))}.fx-bang{font-size:60px}}
+
+
+/* COLOMBIA REALS: barra flotante ordenada (v2026-11-15) */
+#ixPw{left:14px!important;bottom:148px!important;z-index:9010!important}
+#crP{left:14px!important;bottom:88px!important;z-index:9011!important}
+#crU{left:14px!important;bottom:14px!important;z-index:9012!important;max-width:min(92vw,360px)}
+#crU span{max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#mgDc{left:auto!important;right:16px!important;bottom:136px!important;z-index:9010!important}
+body:has(#crU) #mgDc{display:none!important}
+@media(max-width:650px){
+  #ixPw{left:12px!important;bottom:148px!important}
+  #crP{left:12px!important;bottom:88px!important}
+  #crU{left:12px!important;bottom:12px!important}
+  #mgDc{left:auto!important;right:12px!important;bottom:136px!important}
+}
+
+/* FIX: la pantalla REGALAR debe quedar encima del visor de imágenes */
+.fs-ov{z-index:2147483646!important}
+.fs-ov .fs-b{position:relative;z-index:1}

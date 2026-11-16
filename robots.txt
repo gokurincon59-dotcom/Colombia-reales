@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /panel.html
+Disallow: /generador/
+Disallow: /admin-login.html
+Sitemap: https://colombia-reales.netlify.app/sitemap.xml

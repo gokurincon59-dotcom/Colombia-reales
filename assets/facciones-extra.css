@@ -1,0 +1,55 @@
+/* ===== FACCIONES: secciones ampliadas ===== */
+.ov-intro{display:grid;gap:18px;margin:0 0 26px}
+.ovg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.ovc{display:flex;flex-direction:column;text-decoration:none;color:#fff;background:linear-gradient(145deg,rgba(35,12,16,.96),rgba(7,5,6,.96));border:1px solid var(--acd);border-radius:14px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.ovc:hover,.ovc:focus-visible{transform:translateY(-6px);border-color:var(--ac);box-shadow:0 14px 38px rgba(190,0,20,.28)}
+.ovc.legal:hover,.ovc.legal:focus-visible{border-color:#ffb800;box-shadow:0 14px 38px rgba(255,184,0,.2)}
+.ovc .ph{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
+.ovc .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.ovc:hover .ph img{transform:scale(1.07)}
+.ovc .ph.emb2{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:radial-gradient(circle at 50% 35%,rgb(var(--acr)/.34),#0a0305 72%)}
+.ovc .ph.emb2 img{width:84px;height:auto;object-fit:contain;filter:drop-shadow(0 0 14px var(--ac))}
+.ovc .ph.emb2 small{font-size:10px;letter-spacing:4px;color:var(--acl)}
+.ovc .tag{position:absolute;top:10px;left:10px;font-size:15px;letter-spacing:2px;padding:3px 12px;border-radius:30px;background:var(--ac2);border:1px solid var(--acl);box-shadow:0 0 14px rgb(var(--acr)/.5)}
+.ovc.legal .tag{background:#7a5a10;border-color:#ffd36b;color:#ffe9a8;box-shadow:0 0 14px rgba(255,184,0,.4)}
+.ovc .bd{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.ovc h3{margin:0;font-size:28px;letter-spacing:2px;text-transform:uppercase;line-height:1}
+.ovc .id{margin:0;font-size:12px;color:#cbbec0;line-height:1.55}
+.ovc ul{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:13px;color:#e6dadd}
+.ovc li:before{content:"✔";color:var(--acl);margin-right:8px;font-size:11px}
+.ovc.legal li:before{color:#ffd36b}
+.ovc .ft{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid var(--acd);padding-top:12px}
+.ovc .pr{font-size:22px;letter-spacing:1px;line-height:1}.ovc .pr small{font-size:11px;color:var(--acl);letter-spacing:1px;font-family:Poppins,sans-serif}
+.ovc .pr.ask{font-size:15px;color:#ffd36b;letter-spacing:1px}
+.ovc .go{font-size:15px;letter-spacing:2px;color:var(--acl);white-space:nowrap}.ovc:hover .go{color:#fff}
+.incl{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.incl div{background:rgb(var(--acr)/.08);border:1px solid var(--acm);border-radius:12px;padding:20px 12px;text-align:center;font-size:13px;color:#cbbec0;line-height:1.4}
+.incl span{display:block;font-size:30px;margin-bottom:8px}
+.incl b{display:block;color:#fff;font-size:19px;letter-spacing:2px;text-transform:uppercase;font-weight:400;font-family:"Bebas Neue",Impact,sans-serif}
+.cmpf .cmp{min-width:760px}
+.cmpf .cmp td:first-child{position:sticky;left:0;background:#12080b;z-index:1;white-space:nowrap}
+.cmpf .cmp th{white-space:nowrap}
+.cmpf .cmp .no{color:#6f5f62}
+.cmpf .cmp .ok{color:var(--acl)}
+.cmpf .cmp tr:hover td:not(.g){background:rgb(var(--acr)/.06)}
+.cmpf .cmp tr:hover td:first-child{background:#1c0b0f}
+.cmp-note{margin:12px 2px 0;font-size:12px;color:#9a8c8f;text-align:center}
+.cta-row{text-align:center;margin-top:22px}
+@media(max-width:600px){.ovc h3{font-size:24px}.cmpf .cmp{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.ovc,.ovc .ph img{transition:none}}
+#elige{margin-bottom:56px}
+
+
+/* COLOMBIA REALS: barra flotante ordenada (v2026-11-15) */
+#ixPw{left:14px!important;bottom:148px!important;z-index:9010!important}
+#crP{left:14px!important;bottom:88px!important;z-index:9011!important}
+#crU{left:14px!important;bottom:14px!important;z-index:9012!important;max-width:min(92vw,360px)}
+#crU span{max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#mgDc{left:auto!important;right:16px!important;bottom:136px!important;z-index:9010!important}
+body:has(#crU) #mgDc{display:none!important}
+@media(max-width:650px){
+  #ixPw{left:12px!important;bottom:148px!important}
+  #crP{left:12px!important;bottom:88px!important}
+  #crU{left:12px!important;bottom:12px!important}
+  #mgDc{left:auto!important;right:12px!important;bottom:136px!important}
+}

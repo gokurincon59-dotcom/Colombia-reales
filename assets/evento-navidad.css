@@ -1,0 +1,32 @@
+/* COLOMBIA REALS · Evento Navidad 2026 */
+.crx-navlink{color:#ffd66b!important;border:1px solid rgba(255,214,107,.45);padding:8px 12px;border-radius:30px;background:rgba(180,20,35,.16);font-weight:700}
+#crx-event{position:fixed;inset:0;z-index:100020;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(2,5,12,.88);backdrop-filter:blur(12px);overflow:auto}
+#crx-event.open{display:flex}
+.crx-panel{position:relative;width:min(980px,100%);max-height:min(92vh,900px);overflow:auto;background:linear-gradient(145deg,#10251d,#07120f 58%,#1b080d);border:1px solid rgba(255,213,111,.48);border-radius:22px;box-shadow:0 25px 90px #000b,0 0 45px #d3132530;color:#fff;padding:clamp(18px,3vw,32px)}
+.crx-close{position:absolute;right:14px;top:12px;border:1px solid #ffffff30;background:#ffffff12;color:#fff;border-radius:50%;width:38px;height:38px;font-size:20px;cursor:pointer}
+.crx-head{text-align:center;padding:8px 34px 18px}.crx-kicker{color:#ffd66b;font-size:11px;letter-spacing:4px;text-transform:uppercase}.crx-head h2{font-size:clamp(28px,5vw,48px);margin:8px 0;font-family:Georgia,serif;color:#ffe8ad;text-shadow:0 3px 25px #d3132570}.crx-head p{color:#d0d8d1;margin:0;font-size:13px}
+.crx-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.crx-card{background:#ffffff0a;border:1px solid #ffffff1b;border-radius:16px;padding:18px;min-width:0}
+.crx-treebox{display:flex;align-items:center;justify-content:center;min-height:300px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 70%,#1b754c55,transparent 62%)}
+.crx-tree{width:min(100%,310px);height:290px;object-fit:contain;filter:drop-shadow(0 10px 18px #0008);animation:crx-sway 4s ease-in-out infinite alternate}
+@keyframes crx-sway{to{transform:rotate(1.4deg)}}
+.crx-tree .light{animation:crx-blink 1.6s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center}
+@keyframes crx-blink{to{opacity:.28;filter:brightness(1.7)}}
+.crx-treebase{position:absolute;bottom:18px;width:60%;height:18px;border-radius:50%;background:#ffd66b22;filter:blur(8px)}
+.crx-count{font-size:clamp(25px,5vw,42px);font-weight:900;color:#ffd66b;text-align:center;font-variant-numeric:tabular-nums}
+.crx-sub{text-align:center;color:#cbd6ce;font-size:12px;margin:3px 0 16px}
+.crx-dates{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.crx-date{border:1px solid #ffffff1c;border-radius:10px;padding:9px 6px;text-align:center;background:#ffffff08;font-size:11px;color:#dbe5dd}
+.crx-date b{display:block;font-size:17px;color:#ffe1a0}.crx-date.today{border-color:#ffd66b;background:#ffd66b19;box-shadow:0 0 14px #ffd66b25}.crx-date.done{border-color:#48d18a;color:#8ff0b0}
+.crx-wheelwrap{display:grid;place-items:center;padding:8px 0 12px}
+.crx-wheel{width:min(230px,68vw);aspect-ratio:1;border-radius:50%;border:7px solid #ffe2a0;position:relative;overflow:hidden;box-shadow:0 0 0 5px #7a2d20,0 0 32px #ffd66b44;transition:transform 4s cubic-bezier(.12,.78,.12,1);background:conic-gradient(#c92335 0 45deg,#f0b83d 45deg 90deg,#1d754d 90deg 135deg,#244e9b 135deg 180deg,#c92335 180deg 225deg,#f0b83d 225deg 270deg,#1d754d 270deg 315deg,#244e9b 315deg)}
+.crx-wheel:after{content:"";position:absolute;inset:35%;border-radius:50%;background:#fff0cf;border:4px solid #9c4829;box-shadow:0 2px 8px #0008}
+.crx-wheel span{position:absolute;left:50%;top:50%;width:50%;height:1px;transform-origin:left center;color:white;font-size:10px;font-weight:800;text-shadow:0 1px 3px #000;display:flex;align-items:center;padding-left:24px}
+.crx-pointer{font-size:27px;color:#ffe4a3;text-align:center;line-height:1;margin-bottom:-7px;z-index:2}
+.crx-btn{display:block;width:100%;border:0;border-radius:10px;padding:13px 16px;background:linear-gradient(100deg,#ffd66b,#e89b30);color:#251407;font-weight:900;letter-spacing:1px;cursor:pointer;box-shadow:0 7px 20px #0004}
+.crx-btn:disabled{opacity:.5;cursor:not-allowed}
+.crx-streak{display:flex;justify-content:space-between;gap:8px;align-items:center;color:#d9e5dc;font-size:12px;margin-bottom:12px}.crx-streak b{font-size:24px;color:#ffd66b}
+.crx-prize{min-height:20px;text-align:center;color:#ffe3a3;font-size:13px;margin:12px 0 0;font-weight:700}
+.crx-foot{text-align:center;color:#91a397;font-size:10px;margin-top:16px;line-height:1.5}
+@media(max-width:700px){.crx-layout{grid-template-columns:1fr}.crx-treebox{min-height:250px}.crx-tree{height:240px}.crx-panel{max-height:95vh;padding:16px}.crx-dates{grid-template-columns:repeat(3,1fr)}}
+@media(prefers-reduced-motion:reduce){.crx-tree,.crx-tree .light{animation:none!important}}
